@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -19,14 +20,12 @@ header {
     padding: 1.5rem 2rem;
     border-bottom: 1px solid #ddd;
     max-width: 100%;
-
 }
 
 header nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    /* position: fixed; */
 }
 
 header nav a {
@@ -42,26 +41,10 @@ header nav a:hover {
     color: #555;
 }
 
-/* Responsive Header */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-    }
-
-    header nav {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
-        margin-top: 1rem;
-    }
-}
-
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 6rem 1.5rem 4rem;
+    padding: 1.5rem 1.5rem;
 }
 
 .hero h1 {
@@ -70,20 +53,61 @@ header nav a:hover {
     line-height: 1;
 }
 
+.hero h2 {
+    font-size: 2rem;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+
 /* Gallery Section */
 .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns */
     gap: 1.5rem;
-    padding: 4rem 1.5rem;
+    padding: 1rem 1.5rem;
 }
 
-.gallery img {
+.photo-item {
+    position: relative;
+    overflow: hidden; /* Keeps effects within bounds */
+    border-radius: 8px;
+}
+
+/* Project Card */
+.project-card {
     width: 100%;
-    aspect-ratio: 1.5 / 1; /* Makes the images square */
-    object-fit: cover; /* Ensures images fit within the square */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better visuals */
+    aspect-ratio: 1.5 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth shrinking effect */
+    z-index: 2; /* Keeps the image above the white outline */
+}
+
+/* Hover Effect: White Outline */
+.project-card:hover {
+    transform: scale(0.95); /* Shrinks the image */
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black; /* White outline */
+    border-radius: 8px; /* Matches the image's corners */
+    opacity: 0; /* Initially hidden */
+    z-index: 1; /* Positioned below the image */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth appearance */
+    transform: scale(1); /* Starts at normal size */
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.pproject-card:hover::before {
+    opacity: 1; /* Show the white outline */
+    transform: scale(0.95); /* Match the shrunken size of the image */
 }
 
 /* Responsive Gallery */
@@ -100,9 +124,47 @@ footer {
     color: #777;
 }
 
-h2 {
-    margin: 0.5rem 0;
-    padding: 0;
-    line-height: 1.2;
-    font-size: 8vh;
+
+  /* Project Page */
+
+  .hero p {
+    text-align: left;
+    padding: 1vh;
+  }
+
+  .project-intro {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.7rem;
+  }
+
+  .intro ul {
+    list-style-type: circle;
+  }
+
+video {
+    width: 100%;
+  }
+
+.program-info {
+    padding: 1.5rem 1.5rem;
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.program-info img {
+ width: 80vh;
+ object-fit: cover;
+}
+/* carousel */
+
+sl-carousel-item {
+    height: 30vh;
+}
+
+.next-project {
+    border-bottom: 1px solid #ddd;
+    text-align: right;
+    margin-top: 6rem;
 }
