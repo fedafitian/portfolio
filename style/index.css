@@ -151,11 +151,34 @@ video {
     padding: 1.5rem 1.5rem;
     max-width: 100%;
     border-bottom: 1px solid #ddd;
+    
 }
 
-.program-info img {
- width: 80vh;
+.program-info-customer {
+    padding: 1.5rem 1.5rem;
+    border-bottom: 1px solid #ddd;
+    background-color: rgba(255, 255, 251);
+    opacity: 0.5;
+    display: flex;
+    align-items: center; /* Vertically centers the text */
+    font-size: 30px;
+    opacity: 0.5;
+    filter: sepia(100%);
+   
+}
+
+.program-info-customer img {
+ width: 60%;
  object-fit: cover;
+ /* opacity: 0.5;
+ filter: sepia(100%); */
+ padding-left: 2rem 0 0;
+
+ border-color: green;
+}
+.program-info-customer p {
+    float: left;
+/* line-height: 90px;    */
 }
 /* carousel */
 
