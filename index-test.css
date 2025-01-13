@@ -1,9 +1,20 @@
 /* General Styles */
-body, html {
+/* body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
     color: #fff;
+  } */
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'indivisible', sans-serif;
+    color: black;
+  }
+  
+  h1, h2 {
+    text-align: center;
   }
   
   a {
@@ -11,7 +22,7 @@ body, html {
     color: inherit;
   }
   
-  ul {
+  nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -141,3 +152,40 @@ body, html {
     }
   }
   
+  /* Page Dividers */
+  /* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+  /* Innovation Page */
+
+  .body-without-nav {
+    padding: 3.5rem;
+  }
+
+  .gh-mp4 {
+    width: 100%;
+    height: auto; /* Let the video resize based on its width */
+    overflow: hidden;
+  }
+  
+  .gh-mp4 video {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the video scales beautifully without distortion */
+    image-rendering: auto; /* Optimize rendering for video quality */
+    display: block; /* Remove any gaps caused by inline elements */
+  }
+
+  .projects-wrapper .project:nth-child(odd) {
+    background-color: white;
+  }
+  
+  .projects-wrapper .project:nth-child(even) {
+    background-color: blue;
+  }
+  
+  /*this is test section for nth child stuff .project-header:nth-child(odd){
+    border: 2px solid red; /* Helps to identify sections
+  } */
