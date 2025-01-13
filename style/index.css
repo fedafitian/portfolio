@@ -387,3 +387,77 @@ sl-details.custom-icons::part(content) {
   background-color: #fff;
   border-top: 1px solid #ddd;
 }
+
+/* Customer Programs Page */
+.big-ip-prgm {
+  background-color: black;
+  display: flex; /* Set display to flex for horizontal alignment */
+  align-items: center; /* Vertically align items */
+  justify-content: space-between; /* Add spacing between text and image */
+  margin: auto;
+}
+
+.big-ip-prgm img {
+  max-width: 50%; /* Limit image width to prevent it from taking too much space */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: auto;
+}
+
+.big-ip-prgm h2 {
+  color: white;
+  margin: 0 20px; /* Add margin for spacing around the text */
+  font-size: 1.5rem; /* Adjust as needed */
+  max-width: 45%; /* Ensure text doesn't overflow and stays next to the image */
+  word-wrap: break-word; /* Handle long text properly */
+}
+
+/* LHT Program Styling */
+.lht-prgm {
+  position: relative; /* Establish a positioning context */
+  display: inline-block; /* Ensure the content stays inline */
+  text-align: center; /* Center-align text horizontally */
+}
+
+.lht-prgm img {
+  width: 100%; /* Make the image span the full width of the container */
+  height: auto; /* Maintain the original aspect ratio */
+  display: block; /* Remove any extra whitespace below the image */
+}
+
+.lht-prgm h2 {
+  position: absolute; /* Position relative to the .lht-prgm container */
+  top: 40%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Perfect centering */
+  color: white; /* Text color */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add a shadow for better readability */
+  margin: 0; /* Remove default margins */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) { /* For tablets and smaller screens */
+  .big-ip-prgm h2,
+  .lht-prgm h2 {
+    font-size: 1.2rem; /* Reduce font size */
+    max-width: 80%; /* Adjust width for smaller layout */
+    white-space: normal; /* Allow wrapping for smaller screens */
+  }
+}
+
+@media (max-width: 480px) { /* For mobile screens */
+  .big-ip-prgm h2,
+  .lht-prgm h2 {
+    font-size: 1rem; /* Further reduce font size for small screens */
+    max-width: 90%; /* Allow text to occupy more space */
+    white-space: normal; /* Ensure text wraps properly */
+    text-align: center; /* Center-align text for better readability */
+  }
+
+  .big-ip-prgm img,
+  .lht-prgm img {
+    max-width: 100%; /* Ensure the image scales properly */
+    margin: 0 auto; /* Center the image */
+  }
+}
