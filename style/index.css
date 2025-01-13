@@ -6,248 +6,264 @@
     color: #fff;
   } */
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'indivisible', sans-serif;
-    color: black;
-  }
-  
-  h1, h2 {
-    text-align: center;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  /* Header */
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #f04e41;
-    position: relative;
-  }
-  
-  .nav-left, .nav-right {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .nav-right img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  /* This also centers the navbar logo */
-  .logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #fff;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'indivisible', sans-serif;
+  color: black;
+}
+
+/* Fixed Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f04e41;
+  z-index: 10;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Header */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f04e41;
+  position: relative;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-right img {
+  width: 20px;
+  height: 20px;
+}
+
+/* This also centers the navbar logo */
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+/* Hero Section */
+#hero {
+  height: 70vh;
+  background: linear-gradient(rgba(240, 78, 65, 0.8), rgba(240, 78, 65, 0.8)), url('hero-bg.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* Prevent content overflow */
+  /* align-items: center;
+    text-align: center; */
+  /* flex-direction: column; */
+}
+
+#hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensure it takes full vertical space */
+  position: sticky; /* Sticks while scrolling */
+  top: 0; /* Ensure it stays at the top when sticky */
+  text-align: center;
+  color: #fff;
+  z-index: 2; /* Ensure it's above the background */
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+#hero h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+#hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Typing Effect */
+.typewriter h1 {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  border-right: 2px solid white; /* The blinking cursor */
+  white-space: nowrap; /* Keeps text on one line */
+  overflow: hidden; /* Hides the text as it's being "typed" */
+  animation: typing 2s steps(20, end), blink 0.7s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
   }
 
-  
-  
-  /* Hero Section */
-  #hero {
-    height: 70vh;
-    background: linear-gradient(rgba(240, 78, 65, 0.8), rgba(240, 78, 65, 0.8)), url('hero-bg.jpg') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
+  to {
+    width: 100%; /* Adjust based on the length of "Hi! I'm Feda." */
   }
+}
 
-  #hero .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%; /* Ensure it takes full vertical space */
-    position: sticky; /* Sticks while scrolling */
-    top: 0; /* Ensure it stays at the top when sticky */
-    text-align: center;
-    color: #fff;
-    z-index: 2; /* Ensure it's above the background */
+/* Blinking cursor */
+@keyframes blink {
+  50% {
+    border-color: transparent;
   }
-  #hero h1 {
-    font-size: 3rem;
-    margin: 0.5rem 0;
-  }
-  
-  #hero h2 {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
-  }
-  
-  #hero p {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-  }
+}
 
-  /* Typing Effect */
-  .typewriter h1 {
-    display: inline-block;
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;
-    border-right: 2px solid white; /* The blinking cursor */
-    white-space: nowrap; /* Keeps text on one line */
-    overflow: hidden; /* Hides the text as it's being "typed" */
-    animation: typing 2s steps(20, end), blink 0.7s step-end infinite;
-  }
-  
-  /* Typing animation */
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%; /* Adjust based on the length of "Hi! I'm Feda." */
-    }
-  }
-  
-  /* Blinking cursor */
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
-  
-  
- /* Portfolio Section */
+
+/* Portfolio Section */
 #portfolio {
-    padding: 1rem;
-    background-color: #fff;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row by default */
-    gap: 0.1rem; /* Consistent spacing between items */
-  }
-  
-  .grid-item {
-    position: relative;
-    /* border-radius: 8px; */ /* Rounded corners */
-    overflow: hidden; /* Ensures overlay stays within bounds */
-  }
-  
-  .grid-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth zoom and dimming effect */
-    aspect-ratio: 1.5 / 1;
-    object-fit: cover;
-  }
-  
-  .grid-item:hover img {
-    transform: scale(1.05); /* Slight zoom effect */
-    filter: brightness(70%); /* Dim the image */
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s ease; /* Smooth fade-in effect */
-  }
-  
-  .grid-item:hover .overlay {
-    opacity: 1; /* Show overlay on hover */
-  }
+  padding: 1rem;
+  background-color: #fff;
+}
 
-  /* Smooth Scroll */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row by default */
+  gap: 0.1rem; /* Consistent spacing between items */
+}
+
+.grid-item {
+  position: relative; 
+  /* border-radius: 8px; */ /* Rounded corners */
+  overflow: hidden; /* Ensures overlay stays within bounds */
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth zoom and dimming effect */
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05); /* Slight zoom effect */
+  filter: brightness(70%); /* Dim the image */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  /* Smooth fade-in effect */
+}
+
+.grid-item:hover .overlay {
+  opacity: 1;
+  /* Show overlay on hover */
+}
+
+/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
-  
-  /* Responsive Layout */
-  @media (max-width: 1024px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr); /* 2 items per row for medium screens */
-    }
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row for medium screens */
   }
-  
-  @media (max-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(1, 1fr); /* 1 item per row for small screens */
-    }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 item per row for small screens */
   }
-  
-  /* Page Dividers */
+}
+
+/* Page Dividers */
 hr.solid {
   border-top: 3px solid #bbb;
 }
 
-  /* Innovation Page */
+/* Innovation Page */
 
-  .body-without-nav {
-    padding: 3.5rem;
-  }
+.body-without-nav {
+  padding: 3.5rem;
+}
 
-  .gh-mp4 {
-    width: 100%;
-    height: auto; /* Let the video resize based on its width */
-    overflow: hidden;
-  }
-  
-  .gh-mp4 video {
-    width: 100%; /* Full width of the container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensures the video scales beautifully without distortion */
-    image-rendering: auto; /* Optimize rendering for video quality */
-    display: block; /* Remove any gaps caused by inline elements */
-  }
+.gh-mp4 {
+  width: 100%;
+  height: auto;
+  /* Let the video resize based on its width */
+  overflow: hidden;
+}
 
-  /* Previous and Next Project Pagination */
-  .next-prev-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 0;
-    background-color: #f9f9f9;
-    border-top: 1px solid #ddd;
-  }
+.gh-mp4 video {
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the video scales beautifully without distortion */
+  image-rendering: auto; /* Optimize rendering for video quality */
+  display: block; /* Remove any gaps caused by inline elements */
+}
 
-  .next-prev-navigation .prev-project,
-  .next-prev-navigation .next-project {
-    width: 48%; /* Each project card takes 48% of the width */
-  }
+/* Previous and Next Project Pagination */
+.next-prev-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
 
-  /* About Me Carousel */
+.next-prev-navigation .prev-project,
+.next-prev-navigation .next-project {
+  width: 48%; /* Each project card takes 48% of the width */
+}
+
+/* About Me Carousel */
 .carousel-thumbnails {
   --slide-aspect-ratio: 3 / 2;
 }
