@@ -79,13 +79,17 @@
   }
 
   #hero .hero-content {
-    position: sticky; /* Sticks the hero content during scroll */
-    top: 20%; /* Adjusts how much of the viewport is covered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure it takes full vertical space */
+    position: sticky; /* Sticks while scrolling */
+    top: 0; /* Ensure it stays at the top when sticky */
     text-align: center;
     color: #fff;
-    padding: 2rem;
+    z-index: 2; /* Ensure it's above the background */
   }
-  
   #hero h1 {
     font-size: 3rem;
     margin: 0.5rem 0;
@@ -100,6 +104,36 @@
     margin-top: 1rem;
     font-size: 1.2rem;
   }
+
+  /* Typing Effect */
+  .typewriter h1 {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    border-right: 2px solid white; /* The blinking cursor */
+    white-space: nowrap; /* Keeps text on one line */
+    overflow: hidden; /* Hides the text as it's being "typed" */
+    animation: typing 2s steps(20, end), blink 0.7s step-end infinite;
+  }
+  
+  /* Typing animation */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%; /* Adjust based on the length of "Hi! I'm Feda." */
+    }
+  }
+  
+  /* Blinking cursor */
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
   
  /* Portfolio Section */
 #portfolio {
