@@ -302,3 +302,18 @@ hr.solid {
 .thumbnails__image.active {
   opacity: 1;
 }
+
+.download-resume {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #f04e41;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.download-resume:hover {
+  background-color: #d43c33;
+}
