@@ -178,13 +178,13 @@ hr.solid {
     display: block; /* Remove any gaps caused by inline elements */
   }
 
-  .projects-wrapper .project:nth-child(odd) {
+  /* .projects-wrapper .project:nth-child(odd) {
     background-color: white;
   }
   
   .projects-wrapper .project:nth-child(even) {
     background-color: blue;
-  }
+  } */
   
   /*this is test section for nth child stuff .project-header:nth-child(odd){
     border: 2px solid red; /* Helps to identify sections
