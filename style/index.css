@@ -333,3 +333,57 @@ hr.solid {
 .download-resume:hover {
   background-color: #d43c33;
 }
+
+/* Shoelace Library Styling  */
+sl-details.custom-icons::part(summary-icon) {
+  /* Disable the expand/collapse animation */
+  rotate: none;
+}
+/* Shoelace Library Styling */
+sl-details.custom-icons::part(base) {
+  /* General styling for the details component */
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+sl-details.custom-icons::part(summary) {
+  /* Styling the summary section */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color:#f04e41; /* Customize the color */
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+sl-details.custom-icons::part(summary:hover) {
+  /* Hover effect for summary */
+  /* background-color: #ececec; */
+  color: #f04e41;
+}
+
+sl-details.custom-icons::part(summary-icon) {
+  /* Styling the icons */
+  margin-right: 0.5rem; /* Add spacing between icon and text */
+  font-size: 1.5rem;
+  color: #666;
+}
+
+sl-details.custom-icons::part(summary-icon:hover) {
+  /* Icon hover effect */
+  color: #f04e41;
+}
+
+sl-details.custom-icons::part(content) {
+  /* Styling the expanded content area */
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  padding: 1rem;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
