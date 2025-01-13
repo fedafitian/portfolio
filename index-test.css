@@ -189,3 +189,58 @@ hr.solid {
   /*this is test section for nth child stuff .project-header:nth-child(odd){
     border: 2px solid red; /* Helps to identify sections
   } */
+
+  /* Previous and Next Project Pagination */
+  /* .next-prev-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+.next-prev-navigation .prev-project,
+.next-prev-navigation .next-project {
+    width: 48%; /* Each project card takes 48% of the width */
+    height: auto;
+    object-fit: cover;
+    text-align: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.next-prev-navigation .prev-project:hover,
+.next-prev-navigation .next-project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.next-prev-navigation img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    aspect-ratio: 16 / 9; /* Maintains a consistent aspect ratio */
+}
+
+.next-prev-navigation h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.next-prev-navigation p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.next-prev-navigation a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+} */
