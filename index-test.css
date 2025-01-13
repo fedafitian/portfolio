@@ -191,7 +191,8 @@ hr.solid {
   } */
 
   /* Previous and Next Project Pagination */
-  /* .next-prev-navigation {
+/* 
+  .next-prev-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -202,7 +203,7 @@ hr.solid {
 
 .next-prev-navigation .prev-project,
 .next-prev-navigation .next-project {
-    width: 48%; /* Each project card takes 48% of the width */
+    width: 48%; /* Each project card takes 48% of the width
     height: auto;
     object-fit: cover;
     text-align: center;
@@ -224,7 +225,7 @@ hr.solid {
     border-radius: 8px;
     margin-bottom: 1rem;
     object-fit: cover;
-    aspect-ratio: 16 / 9; /* Maintains a consistent aspect ratio */
+    aspect-ratio: 16 / 9; /* Maintains a consistent aspect ratio
 }
 
 .next-prev-navigation h3 {
@@ -243,4 +244,5 @@ hr.solid {
     text-decoration: none;
     color: inherit;
     display: block;
-} */
+}
+*/
