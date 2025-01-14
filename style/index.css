@@ -67,7 +67,17 @@ header nav {
   height: 20px;
 }
 
+.nav-left img {
+  display:none;
+}
 /* This also centers the navbar logo */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
 .logo {
   font-weight: bold;
   font-size: 1.2rem;
@@ -75,6 +85,85 @@ header nav {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Hide the checkbox */
+.menu-toggle {
+  display: none;
+}
+
+/* Navbar Links */
+.nav-left {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-left li a,
+.nav-left li img {
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    z-index: 15;
+  }
+
+  .nav-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f04e41;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Open the menu when checkbox is checked */
+  .menu-toggle:checked ~ .nav-left {
+    transform: translateY(0);
+  }
+
+  /* Transform hamburger into "X" when menu is open */
+.menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  z-index: 12; /* Ensure this stays on top */
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0; /* Hide the middle line */
+  z-index: 11; /* Maintain its layer position */
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -8px);
+  z-index: 13; /* Ensure this stays on top */
+}
+
 }
 
 /* Hero Section */
