@@ -6,6 +6,10 @@
     color: #fff;
   } */
 
+  * {
+    font-family: 'indivisible', sans-serif;
+  }
+
 body {
   margin: 0;
   padding: 0;
@@ -340,6 +344,28 @@ html {
 hr.solid {
   border-top: 3px solid #bbb;
 }
+
+/* Hyperlinks */
+.project-header a {
+  text-decoration: underline;
+  color: #f04e41;
+
+}
+
+.project-header a:hover {
+  color: hotpink;
+  text-decoration: underline;
+}
+
+.project-header a:active {
+  color: blue;
+}
+
+.pdf {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
 
 /* Innovation Page */
 
