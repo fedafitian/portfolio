@@ -6,7 +6,12 @@
     color: #fff;
   } */
 
+  * {
+    font-family: 'indivisible', sans-serif;
+  }
+
 body {
+  
   margin: 0;
   padding: 0;
   font-family: 'indivisible', sans-serif;
@@ -14,7 +19,7 @@ body {
 }
 
 .body-without-nav {
-  padding: 8.5rem;
+  padding: 4rem 6.5rem;
   text-align: justify;
 }
 
@@ -182,7 +187,7 @@ nav {
   z-index: 5;
 }
 
-#hero .hero-content {
+#hero .hero-content, #hero .hero-content-about {
   text-align: center;
   position: sticky;
   top: 35%; /* Vertically centered */
@@ -341,6 +346,33 @@ hr.solid {
   border-top: 3px solid #bbb;
 }
 
+/* Hyperlinks */
+.project-header a, .content-section a {
+  text-decoration: underline;
+  color: #f04e41;
+
+}
+
+.project-header a:hover, .content-section a:hover {
+  color: hotpink;
+  text-decoration: underline;
+}
+
+.project-header a:active .content-section a:active {
+  color: blue;
+}
+
+.pdf {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+iframe {
+  width: 70%;
+  aspect-ratio: 4 / 3;
+}
+
+
 /* Innovation Page */
 
 .gh-mp4 {
@@ -428,11 +460,22 @@ hr.solid {
 }
 
 /* Shoelace Library Styling  */
+/* figure {
+  margin: 0;
+  text-align: center;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+} */
+
 sl-details.custom-icons::part(summary-icon) {
   /* Disable the expand/collapse animation */
   rotate: none;
 }
-/* Shoelace Library Styling */
+
 sl-details.custom-icons::part(base) {
   /* General styling for the details component */
   border: none;
