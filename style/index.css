@@ -346,23 +346,28 @@ hr.solid {
 }
 
 /* Hyperlinks */
-.project-header a {
+.project-header a, .content-section a {
   text-decoration: underline;
   color: #f04e41;
 
 }
 
-.project-header a:hover {
+.project-header a:hover, .content-section a:hover {
   color: hotpink;
   text-decoration: underline;
 }
 
-.project-header a:active {
+.project-header a:active .content-section a:active {
   color: blue;
 }
 
 .pdf {
   width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+iframe {
+  width: 70%;
   aspect-ratio: 4 / 3;
 }
 
