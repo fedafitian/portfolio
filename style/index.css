@@ -138,11 +138,13 @@ nav {
     gap: 2rem;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
+    /* visibility: hidden; */
   }
 
   /* Open the menu when checkbox is checked */
   .menu-toggle:checked ~ .nav-left {
     transform: translateY(0);
+    /* visibility: visible; Make it visible */
   }
 
   /* Transform hamburger into "X" when menu is open */
