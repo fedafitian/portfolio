@@ -104,7 +104,7 @@
         return;
       }
   
-      // Logic for window sizes greater than 768px and less than or equal to 1024px
+      // Logic for tablet sizes (768px < Width ≤ 1024px)
       if (viewportWidth > 768 && viewportWidth <= 1024) {
         const rows = groupItemsIntoRows(gridItems, 2);
         let mostRelevantRow = null;
@@ -125,24 +125,34 @@
           }
         });
   
-        // Check for fallback at the bottom of the page
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        // Check for special logic at the bottom of the page
         const isAtPageEnd =
-          Math.ceil(scrollPosition + viewportHeight) >= document.documentElement.scrollHeight;
+          Math.ceil(window.scrollY + viewportHeight) >= document.documentElement.scrollHeight;
   
-        if (isAtPageEnd) {
+        if (isAtPageEnd && rows.length > 1) {
           const lastRow = rows[rows.length - 1];
+          const secondToLastRow = rows[rows.length - 2];
           const lastRowVisiblePercentages = lastRow.map((item) => {
             const rect = item.getBoundingClientRect();
             const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
-            return (visibleHeight / rect.height) * 100; // Percentage visibility
+            return (visibleHeight / rect.height) * 100;
           });
   
-          // If the last row is less than 20% visible, switch to the second-to-last row
-          if (Math.min(...lastRowVisiblePercentages) < 30 && rows.length > 1) {
-            mostRelevantRow = rows[rows.length - 2]; // Switch to second-to-last row
+          const secondToLastRowVisiblePercentages = secondToLastRow.map((item) => {
+            const rect = item.getBoundingClientRect();
+            const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+            return (visibleHeight / rect.height) * 100;
+          });
+  
+          const isLastRowLessThan20 = Math.min(...lastRowVisiblePercentages) < 20;
+          const isSecondToLastRow100Visible = secondToLastRowVisiblePercentages.every(
+            (percentage) => percentage === 100
+          );
+  
+          if (isLastRowLessThan20 && isSecondToLastRow100Visible) {
+            mostRelevantRow = secondToLastRow; // Highlight second-to-last row
           } else {
-            mostRelevantRow = lastRow; // Otherwise, highlight the last row
+            mostRelevantRow = lastRow; // Highlight last row
           }
         }
   
@@ -156,23 +166,36 @@
           mostRelevantRow.forEach((item) => item.classList.add("scrolled-past"));
         }
   
-        return; // Skip the logic for smaller screens
+        return; // Skip logic for smaller screens
       }
   
-      // Logic for smaller screens (<= 768px)
+      // Logic for mobile devices (Width ≤ 768px)
       let mostRelevantItem = null;
       let minDistanceToScroll = Infinity;
   
-      gridItems.forEach((item) => {
+      gridItems.forEach((item, index) => {
         const rect = item.getBoundingClientRect();
         const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
-        const visibilityPercentage = visibleHeight / rect.height;
+        const visibilityPercentage = (visibleHeight / rect.height) * 100;
   
-        // Check if the item is visible
+        // Check for "scroll at end" logic for mobile
+        const isAtPageEnd =
+          Math.ceil(window.scrollY + viewportHeight) >= document.documentElement.scrollHeight;
+  
+        if (isAtPageEnd && index === gridItems.length - 1) {
+          if (visibilityPercentage < 45 && index > 0) {
+            mostRelevantItem = gridItems[index - 1]; // Highlight second-to-last item
+          } else {
+            mostRelevantItem = item; // Highlight last item
+          }
+          return; // Skip further processing for this condition
+        }
+  
+        // Determine the most relevant item based on visibility and distance to the center
         if (visibilityPercentage > 0.5) {
-          const distanceToCenter = Math.abs(rect.top + rect.height / 2 - viewportHeight / 2);
-  
-          // Find the closest item to the center of the viewport
+          const distanceToCenter = Math.abs(
+            rect.top + rect.height / 2 - viewportHeight / 2
+          );
           if (distanceToCenter < minDistanceToScroll) {
             mostRelevantItem = item;
             minDistanceToScroll = distanceToCenter;
@@ -194,7 +217,7 @@
     // Handle hover logic
     gridItems.forEach((item) => {
       item.addEventListener("mouseover", () => {
-        if (window.innerWidth > 1024) return; // Exclude hover logic for larger screens
+        if (window.innerWidth > 1024) return;
   
         gridItems.forEach((otherItem) => {
           if (otherItem !== item) {
@@ -208,8 +231,8 @@
       });
   
       item.addEventListener("mouseout", () => {
-        if (window.innerWidth > 1024) return; // Exclude hover logic for larger screens
-        applyOverlayLogic(); // Reapply default logic after hover stops
+        if (window.innerWidth > 1024) return;
+        applyOverlayLogic();
       });
     });
   
@@ -227,6 +250,7 @@
     // Reapply logic on resize
     window.addEventListener("resize", applyOverlayLogic);
   </script>
+  
   
   
   
