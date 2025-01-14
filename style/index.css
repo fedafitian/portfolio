@@ -285,51 +285,7 @@ nav {
   overflow: hidden; /* Ensures overlay stays within bounds */
 }
 
-.grid-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth zoom and dimming effect */
-  aspect-ratio: 1.5 / 1;
-  object-fit: cover;
-}
-
-.grid-item:hover img {
-  transform: scale(1.05); /* Slight zoom effect */
-  filter: brightness(70%); /* Dim the image */
-}
-
-/* Active State for Tablet & Mobile Device Overlay */
-/* Active Overlay State */
-.grid-item.scrolled-past .overlay {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.grid-item.scrolled-past img {
-  filter: brightness(80%);
-  transition: filter 0.5s ease;
-}
-
-/* Fade-Out State */
-.grid-item.scrolled-fade .overlay {
-  opacity: 0;
-  transform: translateY(20px); /* Slide down as it fades */
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.grid-item.scrolled-fade img {
-  filter: brightness(100%);
-  transition: filter 0.5s ease;
-}
-
-
-.grid-item.scrolled-fade img {
-  filter: brightness(100%);
-  transition: filter 0.5s ease;
-}
-
+/* Overlay Style - Match Design */
 .overlay {
   position: absolute;
   top: 0;
@@ -340,20 +296,51 @@ nav {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker semi-transparent black */
   color: #fff;
   font-size: 1.2rem;
   font-weight: bold;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none; /* Avoid interaction */
-
-  /* Smooth fade-in effect */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth fade effect */
+  pointer-events: none; /* Avoid interaction with overlay */
 }
 
 .grid-item:hover .overlay {
   opacity: 1; /* Show overlay on hover */
 }
+
+.grid-item.scrolled-past .overlay {
+  opacity: 1; /* Show overlay when active */
+}
+
+.grid-item.scrolled-fade .overlay {
+  opacity: 0; /* Hide overlay when inactive */
+}
+
+/* Image Hover Effect - Subtle Zoom */
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease, transform 0.3s ease; /* Smooth zoom and brightness transition */
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+}
+
+.grid-item:hover img {
+  transform: scale(1.03); /* Slight zoom effect */
+  filter: brightness(70%); /* Dim image slightly */
+}
+
+.grid-item.scrolled-past img {
+  filter: brightness(80%); /* Slight dimming when overlay is active */
+}
+
+.grid-item.scrolled-fade img {
+  filter: brightness(100%); /* Restore original brightness */
+}
+
+
 
 /* Smooth Scroll */
 html {
