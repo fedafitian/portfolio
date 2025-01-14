@@ -299,6 +299,37 @@ nav {
   filter: brightness(70%); /* Dim the image */
 }
 
+/* Active State for Tablet & Mobile Device Overlay */
+/* Active Overlay State */
+.grid-item.scrolled-past .overlay {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.grid-item.scrolled-past img {
+  filter: brightness(80%);
+  transition: filter 0.5s ease;
+}
+
+/* Fade-Out State */
+.grid-item.scrolled-fade .overlay {
+  opacity: 0;
+  transform: translateY(20px); /* Slide down as it fades */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.grid-item.scrolled-fade img {
+  filter: brightness(100%);
+  transition: filter 0.5s ease;
+}
+
+
+.grid-item.scrolled-fade img {
+  filter: brightness(100%);
+  transition: filter 0.5s ease;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -315,12 +346,13 @@ nav {
   font-weight: bold;
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none; /* Avoid interaction */
+
   /* Smooth fade-in effect */
 }
 
 .grid-item:hover .overlay {
-  opacity: 1;
-  /* Show overlay on hover */
+  opacity: 1; /* Show overlay on hover */
 }
 
 /* Smooth Scroll */
@@ -339,6 +371,11 @@ html {
   .grid {
     grid-template-columns: repeat(1, 1fr); /* 1 item per row for small screens */
   }
+  /* .grid-item:hover .overlay {
+    opacity: 1; }/* Keep hover effect stronger */
+
+  /* .grid-item img {
+    filter: brightness(50%); }/* Dim images to highlight overlay */
 }
 
 /* Page Dividers */
