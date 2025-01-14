@@ -67,9 +67,6 @@ header nav {
   height: 20px;
 }
 
-.nav-left img {
-  display:none;
-}
 /* This also centers the navbar logo */
 nav {
   display: flex;
@@ -165,6 +162,11 @@ nav {
 }
 
 }
+
+@media (min-width: 768px) {
+  .nav-left img, .nav-left li:nth-child(4)  {
+    visibility: hidden;
+  }}
 
 /* Hero Section */
 #hero {
