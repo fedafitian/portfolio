@@ -1,0 +1,556 @@
+/* General Styles */
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+  } */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'indivisible', sans-serif;
+  color: black;
+}
+
+.body-without-nav {
+  padding: 8.5rem;
+  text-align: justify;
+}
+
+/* Fixed Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f04e41;
+  z-index: 8;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Header */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f04e41;
+  position: relative;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-right img {
+  width: 20px;
+  height: 20px;
+}
+
+/* This also centers the navbar logo */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Hide the checkbox */
+.menu-toggle {
+  display: none;
+}
+
+/* Navbar Links */
+.nav-left {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-left li a,
+.nav-left li img {
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    z-index: 15;
+  }
+
+  .nav-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f04e41;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    /* visibility: hidden; */
+  }
+
+  /* Open the menu when checkbox is checked */
+  .menu-toggle:checked ~ .nav-left {
+    transform: translateY(0);
+    /* visibility: visible; Make it visible */
+  }
+
+  /* Transform hamburger into "X" when menu is open */
+.menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  z-index: 12; /* Ensure this stays on top */
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0; /* Hide the middle line */
+  z-index: 11; /* Maintain its layer position */
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -8px);
+  z-index: 13; /* Ensure this stays on top */
+}
+
+}
+
+@media (min-width: 768px) {
+  .nav-left img, .nav-left li:nth-child(4)  {
+    visibility: hidden;
+  }}
+
+/* Hero Section */
+#hero {
+  height: 80vh;
+  background: linear-gradient(rgba(240, 78, 65, 0.9), rgba(240, 78, 65, 0.9)), url('hero-bg.jpg') no-repeat center center/cover;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+#hero .hero-content {
+  text-align: center;
+  position: sticky;
+  top: 35%; /* Vertically centered */
+  transform: translateY(-30%); /* Perfect vertical centering */
+  text-align: center;
+  z-index: 6; /* Stays on top */
+}
+
+/* Hero Section About Page*/
+#about-me-hero {
+  height: 50vh; /* Full height to fit the screen */
+  background: linear-gradient(rgba(240, 78, 65, 0.9), rgba(240, 78, 65, 0.9)), url('hero-bg.jpg') no-repeat center center/cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Align text in the center */
+  padding: 2rem;
+}
+
+/* Another option for scroll overlap and text! */
+/* #hero .hero-content {
+  text-align: center;
+  position: sticky;
+  top: 20%; /* Sticks in the middle of the viewport */
+  /* z-index: 6; Stays on top */
+/* } */
+
+#hero h1, .body-without-nav h1 {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+#hero h2, .body-without-nav h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+
+#hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Typing Effect */
+.typewriter h1 {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  border-right: 2px solid white; /* The blinking cursor */
+  white-space: nowrap; /* Keeps text on one line */
+  overflow: hidden; /* Hides the text as it's being "typed" */
+  animation: typing 2s steps(20, end), blink 0.7s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 13ch /* Adjust based on the length of "Hi! I'm Feda." */
+  }
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+/* Portfolio Section */
+#portfolio {
+  padding: 1rem;
+  background-color: #fff;
+  z-index: 4;
+}
+
+.grid {
+  position: sticky; /* Stick grid content as user scrolls */
+  top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row by default */
+  gap: 0.1rem; /* Consistent spacing between items */
+}
+
+.grid-item {
+  position: relative; 
+  /* border-radius: 8px; */ /* Rounded corners */
+  overflow: hidden; /* Ensures overlay stays within bounds */
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth zoom and dimming effect */
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05); /* Slight zoom effect */
+  filter: brightness(70%); /* Dim the image */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  /* Smooth fade-in effect */
+}
+
+.grid-item:hover .overlay {
+  opacity: 1;
+  /* Show overlay on hover */
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 item per row for small screens */
+  }
+}
+
+/* Page Dividers */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+/* Innovation Page */
+
+.gh-mp4 {
+  width: 100%;
+  height: auto;
+  /* Let the video resize based on its width */
+  overflow: hidden;
+}
+
+.gh-mp4 video {
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the video scales beautifully without distortion */
+  image-rendering: auto; /* Optimize rendering for video quality */
+  display: block; /* Remove any gaps caused by inline elements */
+}
+
+/* Previous and Next Project Pagination */
+.next-prev-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+.next-prev-navigation .prev-project,
+.next-prev-navigation .next-project {
+  width: 48%; /* Each project card takes 48% of the width */
+}
+
+/* About Me Carousel */
+.carousel-thumbnails {
+  --slide-aspect-ratio: 3 / 2;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+}
+
+.thumbnails__scroller {
+  display: flex;
+  gap: var(--sl-spacing-small);
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-padding: var(--sl-spacing-small);
+}
+
+.thumbnails__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnails__image {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+
+  opacity: 0.3;
+  will-change: opacity;
+  transition: 250ms opacity;
+
+  cursor: pointer;
+}
+
+.thumbnails__image.active {
+  opacity: 1;
+}
+
+.download-resume {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #f04e41;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.download-resume:hover {
+  background-color: #d43c33;
+}
+
+/* Shoelace Library Styling  */
+sl-details.custom-icons::part(summary-icon) {
+  /* Disable the expand/collapse animation */
+  rotate: none;
+}
+/* Shoelace Library Styling */
+sl-details.custom-icons::part(base) {
+  /* General styling for the details component */
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+sl-details.custom-icons::part(summary) {
+  /* Styling the summary section */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color:#f04e41; /* Customize the color */
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+sl-details.custom-icons::part(summary:hover) {
+  /* Hover effect for summary */
+  /* background-color: #ececec; */
+  color: #f04e41;
+}
+
+sl-details.custom-icons::part(summary-icon) {
+  /* Styling the icons */
+  margin-right: 0.5rem; /* Add spacing between icon and text */
+  font-size: 1.5rem;
+  color: #666;
+}
+
+sl-details.custom-icons::part(summary-icon:hover) {
+  /* Icon hover effect */
+  color: #f04e41;
+}
+
+sl-details.custom-icons::part(content) {
+  /* Styling the expanded content area */
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  padding: 1rem;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+/* Customer Programs Page */
+.big-ip-prgm {
+  background-color: black;
+  display: flex; /* Set display to flex for horizontal alignment */
+  align-items: center; /* Vertically align items */
+  justify-content: space-between; /* Add spacing between text and image */
+  margin: auto;
+}
+
+.big-ip-prgm img {
+  max-width: 50%; /* Limit image width to prevent it from taking too much space */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: auto;
+}
+
+.big-ip-prgm h2 {
+  color: white;
+  margin: 0 20px; /* Add margin for spacing around the text */
+  font-size: 1.5rem; /* Adjust as needed */
+  max-width: 45%; /* Ensure text doesn't overflow and stays next to the image */
+  word-wrap: break-word; /* Handle long text properly */
+}
+
+/* LHT Program Styling */
+.lht-prgm {
+  position: relative; /* Establish a positioning context */
+  display: inline-block; /* Ensure the content stays inline */
+  text-align: center; /* Center-align text horizontally */
+}
+
+.lht-prgm img {
+  width: 100%; /* Make the image span the full width of the container */
+  height: auto; /* Maintain the original aspect ratio */
+  display: block; /* Remove any extra whitespace below the image */
+}
+
+.lht-prgm h2 {
+  position: absolute; /* Position relative to the .lht-prgm container */
+  top: 40%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Perfect centering */
+  color: white; /* Text color */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add a shadow for better readability */
+  margin: 0; /* Remove default margins */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) { /* For tablets and smaller screens */
+  .big-ip-prgm h2,
+  .lht-prgm h2 {
+    font-size: 1.2rem; /* Reduce font size */
+    max-width: 80%; /* Adjust width for smaller layout */
+    white-space: normal; /* Allow wrapping for smaller screens */
+  }
+}
+
+@media (max-width: 480px) { /* For mobile screens */
+  .big-ip-prgm h2,
+  .lht-prgm h2 {
+    font-size: 1rem; /* Further reduce font size for small screens */
+    max-width: 90%; /* Allow text to occupy more space */
+    white-space: normal; /* Ensure text wraps properly */
+    text-align: center; /* Center-align text for better readability */
+  }
+
+  .big-ip-prgm img,
+  .lht-prgm img {
+    max-width: 100%; /* Ensure the image scales properly */
+    margin: 0 auto; /* Center the image */
+  }
+}

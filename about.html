@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>About | Feda Fitian</title>
+  <link rel="stylesheet" href="/style/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/shoelace-autoloader.js"></script>
+
+</head>
+<body>
+  <!-- Header -->
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="logo">feda fitian</div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="nav-left">
+          <li><a href="/index.html">work</a></li>
+          <li><a href="/about.html">about</a></li>
+          <li><a href="/resume.html">resume & contact</a></li>
+          <li><a href="https://www.linkedin.com/in/fedafitian/">linkedin</a></li>
+          </ul>
+          <div class="logo">feda fitian</div>
+          <ul class="nav-right">
+            <li><a href="https://www.linkedin.com/in/fedafitian/"><img src="photos/icons/linkedin.png" alt="LinkedIn"></a></li>
+          </ul>
+      </nav>
+    </header>
+
+    <div class="body-without-nav">
+
+  <!-- Hero Section -->
+  <section id="about-me-hero">
+    <h1>About Me</h1>
+    <p>Discover who I am and what drives my passion for innovation, strategy, and community building.</p>
+  </section>
+
+  <!-- About Content -->
+  <main>
+    <section class="about-content">
+      <h2>Hi, I'm Feda.</h2>
+      <p>
+        With over a decade of experience spanning software engineering, strategy, and program management, I’ve had the privilege of working on projects that merge innovation with impact. My work revolves around solving complex challenges, driving business growth, and empowering communities.
+      </p>
+      <p>
+        Based in Seattle, I specialize in creating solutions that make a difference—whether it's through product delivery, leading innovation initiatives, or building inclusive communities. Outside of work, I’m a proud cat lover, a defender on a pick-up soccer team, and a believer in the power of education to change lives.
+      </p>
+
+      <p>Outside of work, I love exploring cultures and meeting new people. I’ve been lucky enough to travel to 29 countries, each one teaching me something unique about its history, traditions, and way of life. I’ve flown so much that the miles I’ve covered could circle the Earth nearly four times! Along the way, I’ve called six different U.S. states home and picked up three languages, which has definitely helped me see the world from different perspectives and connect with all kinds of people.</p>
+
+      <!-- shoelace library, wooo!!! carousel -->
+      <sl-carousel class="carousel-thumbnails" navigation loop>
+        <sl-carousel-item>
+          <img
+            alt="India, Setpember 2022"
+            src="/photos/travel/india.jpg"
+          />
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <img
+            alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
+            src="/photos/travel/wadi-rum.jpg"
+          />
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <img
+            alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
+            src="/assets/examples/carousel/sunset.jpg"
+          />
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <img
+            alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
+            src="/assets/examples/carousel/field.jpg"
+          />
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <img
+            alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
+            src="/assets/examples/carousel/valley.jpg"
+          />
+        </sl-carousel-item>
+      </sl-carousel>
+      
+      <div class="thumbnails">
+        <div class="thumbnails__scroller">
+          <img alt="India, September 2022" class="thumbnails__image active" src="/assets/examples/carousel/mountains.jpg" />
+          <img alt="Thumbnail by 2" class="thumbnails__image" src="/assets/examples/carousel/waterfall.jpg" />
+          <img alt="Thumbnail by 3" class="thumbnails__image" src="/assets/examples/carousel/sunset.jpg" />
+          <img alt="Thumbnail by 4" class="thumbnails__image" src="/assets/examples/carousel/field.jpg" />
+          <img alt="Thumbnail by 5" class="thumbnails__image" src="/assets/examples/carousel/valley.jpg" />
+        </div>
+      </div>
+      
+      <script>
+        {
+          const carousel = document.querySelector('.carousel-thumbnails');
+          const scroller = document.querySelector('.thumbnails__scroller');
+          const thumbnails = document.querySelectorAll('.thumbnails__image');
+      
+          scroller.addEventListener('click', e => {
+            const target = e.target;
+      
+            if (target.matches('.thumbnails__image')) {
+              const index = [...thumbnails].indexOf(target);
+              carousel.goToSlide(index);
+            }
+          });
+      
+          carousel.addEventListener('sl-slide-change', e => {
+            const slideIndex = e.detail.index;
+      
+            [...thumbnails].forEach((thumb, i) => {
+              thumb.classList.toggle('active', i === slideIndex);
+              if (i === slideIndex) {
+                thumb.scrollIntoView({
+                  block: 'nearest'
+                });
+              }
+            });
+          });
+        }
+      </script>
+      
+
+    </section>
+
+    <!-- Key Highlights -->
+    <section class="highlights">
+      <h2>Key Highlights</h2>
+      <ul>
+        <li><strong>10+ years of experience:</strong> Delivering impactful solutions across industries.</li>
+        <li><strong>Community Builder:</strong> Mentoring and supporting underrepresented groups in STEM.</li>
+        <li><strong>Global Reach:</strong> Collaborating with teams and customers across 36+ countries.</li>
+      </ul>
+    </section>
+
+    <!-- Fun Facts -->
+    <section class="fun-facts">
+      <h2>Fun Facts</h2>
+      <p>
+        When I’m not solving problems or mentoring, you’ll find me:
+      </p>
+      <ul>
+        <li>Trying new DIY projects with my cat by my side.</li>
+        <li>Exploring Seattle’s vibrant coffee scene.</li>
+        <li>Learning new skills—currently trying my hand at songwriting and composition!
+      </ul>
+    </section>
+  </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Feda Fitian. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
