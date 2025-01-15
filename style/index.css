@@ -762,3 +762,13 @@ sl-details.custom-icons::part(content) {
     text-align: center; /* Center-align hero text */
   }
 }
+
+footer {
+  text-align: center;
+  padding: 1rem 0; /* Add some vertical padding for spacing */
+  background-color: #f9f9f9; /* Optional: Light background color */
+}
+
+footer p {
+  margin: 0; /* Remove any default margin */
+}
