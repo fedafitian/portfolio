@@ -36,7 +36,7 @@
       <div class="typewriter">
         <h1>Hi! I’m Feda.</h1>
       </div>
-        <h2>I’m a cat lover professional based out of Seattle.</h2>
+        <h2>I’m a technology professional based out of Seattle.</h2>
       <p>Scroll down to see my work!</p>
     </div>
   </section>
@@ -95,9 +95,18 @@
     // Apply overlay logic on scroll
     function applyOverlayLogic() {
       const viewportWidth = window.innerWidth;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop; // Get current scroll position
   
       // Exclude logic for window sizes greater than 1024px
       if (viewportWidth > 1024) {
+        gridItems.forEach((item) => {
+          item.classList.remove("scrolled-past", "scrolled-fade");
+        });
+        return;
+      }
+  
+      // Do not apply overlay if scroll is at the top for screen sizes ≤ 1024px
+      if (scrollTop === 0) {
         gridItems.forEach((item) => {
           item.classList.remove("scrolled-past", "scrolled-fade");
         });
@@ -250,6 +259,8 @@
     // Reapply logic on resize
     window.addEventListener("resize", applyOverlayLogic);
   </script>
+  
+  
   
   
   

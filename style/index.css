@@ -371,18 +371,18 @@ hr.solid {
 }
 
 /* Hyperlinks */
-.project-header a, .content-section a {
+.project-header a, .content-section a, #summary a{
   text-decoration: underline;
   color: #f04e41;
 
 }
 
-.project-header a:hover, .content-section a:hover {
+.project-header a:hover, .content-section a:hover, #summary a:hover {
   color: hotpink;
   text-decoration: underline;
 }
 
-.project-header a:active .content-section a:active {
+.project-header a:active .content-section a:active #summary a:active {
   color: blue;
 }
 
@@ -470,18 +470,23 @@ iframe {
 
 .download-resume {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #f04e41;
+  padding: 0.8rem 1.5rem;
+  background-color: #000000;
   color: white;
   font-weight: bold;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  padding: 1rem;
 }
 
 .download-resume:hover {
   background-color: #d43c33;
 }
+/* #resume-summary{
+  color: #d43c33;
+} */
 
 /* Shoelace Library Styling  */
 /* figure {
@@ -619,5 +624,41 @@ sl-details.custom-icons::part(content) {
   .lht-prgm img {
     max-width: 100%; /* Ensure the image scales properly */
     margin: 0 auto; /* Center the image */
+  }
+}
+
+/* Icon Styling */
+.icon-text {
+  display: inline-flex; /* Use inline-flex to keep it inline with surrounding content */
+  align-items: center; /* Vertically align icon and text */
+  gap: 0.5rem; /* Space between the icon and the text */
+  margin: 0 auto; /* Center the entire block horizontally in its parent */
+}
+
+.icon {
+  width: 1.2em; /* Match the font size of the text */
+  height: 1.2em; /* Match the font size of the text */
+  object-fit: contain; /* Ensures the icon scales without distortion */
+}
+
+
+/* Tablet Styling (Width <= 1024px) */
+@media (max-width: 1024px) {
+  .body-without-nav {
+    padding: 3rem 4rem; /* Adjust padding for tablets */
+    text-align: justify; /* Keep text alignment the same */
+  }
+}
+
+/* Phone Styling (Width <= 768px) */
+@media (max-width: 768px) {
+  .body-without-nav {
+    padding: 2rem 1.5rem; /* Adjust padding for phones */
+    text-align: justify; /* Keep text alignment the same */
+  }
+  #hero {
+    height: 60vh; /* Reduce height to fit smaller screens */
+    padding: 1rem; /* Add padding for better spacing */
+    text-align: center; /* Center-align hero text */
   }
 }
