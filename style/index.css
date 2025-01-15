@@ -370,6 +370,92 @@ hr.solid {
   border-top: 3px solid #bbb;
 }
 
+/* Container for navigation */
+.next-prev-navigation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
+  gap: 10px; /* Space between items */
+  align-items: start;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+/* Styling each grid item */
+.grid-item {
+  text-align: center; /* Center-aligns the text beneath */
+}
+
+/* Image container for 16:9 aspect ratio */
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  background: #f0f0f0; /* Fallback background color */
+}
+
+/* Images inside the grid items */
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills without distortion */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth zoom effect */
+}
+
+/* Overlay Effect */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth fade effect */
+  text-align: center; /* Center-align overlay text */
+  pointer-events: none; /* Prevent interaction with overlay */
+}
+
+/* Hover Effect for Images and Overlay */
+.image-container:hover img {
+  transform: scale(1.05); /* Slight zoom effect */
+  filter: brightness(70%); /* Dim image slightly */
+}
+
+.image-container:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+/* Text Beneath Images */
+.navigation-text {
+  margin-top: 10px;
+  font-size: 1rem; /* Adjust font size as needed */
+  color: #333;
+  text-align: center; /* Center-align the text */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .next-prev-navigation {
+      grid-template-columns: 1fr; /* Stack items vertically */
+  }
+
+  .navigation-text {
+      font-size: 0.9rem; /* Smaller text for smaller screens */
+  }
+}
+
+
+
 /* Hyperlinks */
 .project-header a, .content-section a, #summary a{
   text-decoration: underline;
@@ -420,7 +506,7 @@ iframe {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
   border-top: 1px solid #ddd;
 }
 
@@ -639,6 +725,20 @@ sl-details.custom-icons::part(content) {
   width: 1.2em; /* Match the font size of the text */
   height: 1.2em; /* Match the font size of the text */
   object-fit: contain; /* Ensures the icon scales without distortion */
+}
+
+@media (max-width: 1024px) {
+  /* For tablets */
+  .icon-text {
+    font-size: 0.9rem; /* Slightly smaller for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  /* For mobile devices */
+  .icon-text {
+    font-size: 0.8rem; /* Smaller font size for mobile */
+  }
 }
 
 

@@ -34,14 +34,15 @@
     </nav>
   </header>
 
-  <div class="body-without-nav">
     <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
+    <section id="hero">
+      <div class="hero-content-about">
         <h1>Innovation Programs</h1>
         <p>Innovation is my passion, and I thrive on bringing ideas to life. I love building programs that spark creativity and drive real impact. Here’s a glimpse into some of my favorite projects:</p>
       </div>
     </section>
+
+  <div class="body-without-nav">
 
     <div class="projects-wrapper">
       <!-- Greenhouse Project Section -->
@@ -146,6 +147,25 @@
         </div>
       </section>
     </div>
+
+    <div class="next-prev-navigation">
+      <!-- Conditionally include the "previous" block only if there is a previous page -->
+      <div class="prev-project hidden">
+          <!-- No Previous Project -->
+      </div>
+      <div class="next-project">
+          <a href="ai-program.html">
+              <div class="grid-item">
+                  <img src="img/ai/ai-hero.jpg" alt="Next">
+                  <div class="overlay">
+                      <h3>AI Program</h3>
+                  </div>
+              </div>
+          </a>
+          <p class="navigation-text">Next</p>
+      </div>
+  </div>
+  
   </div>
 
   <!-- Footer -->
