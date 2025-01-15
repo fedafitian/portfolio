@@ -21,6 +21,7 @@ body {
 .body-without-nav {
   padding: 4rem 6.5rem;
   text-align: justify;
+  line-height: 1.5
 }
 
 /* Fixed Header */
@@ -517,7 +518,39 @@ iframe {
 
 /* About Me Carousel */
 .carousel-thumbnails {
-  --slide-aspect-ratio: 3 / 2;
+  --slide-aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.carousel-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel-item-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px; /* Optional */
+}
+
+.carousel-caption {
+  margin-top: 1rem; /* Ensure there’s space between the image and the caption */
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  max-width: 80%; /* Prevent text from spreading too wide */
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible; /* Ensure the text doesn't get clipped */
+}
+
+.sl-carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .thumbnails {
