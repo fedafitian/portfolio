@@ -7,6 +7,9 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Feda Fitian | Resume</title>
     <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="https://use.typekit.net/puh3ley.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/shoelace-autoloader.js"></script>
 </head>
 
 <header>
@@ -26,26 +29,34 @@
         </ul>
         <div class="logo">feda fitian</div>
         <ul class="nav-right">
-          <li><a href="https://www.linkedin.com/in/fedafitian/"><img src="photos/icons/linkedin.png" alt="LinkedIn"></a></li>
+          <li><a href="https://www.linkedin.com/in/fedafitian/"><img src="img/icons/linkedin.png" alt="LinkedIn"></a></li>
         </ul>
     </nav>
   </header>
 
-<div class="body-without-nav">
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content-about">
+      <h1>Resume</h1>
+      <p>Discover my journey and the skills that drive my passion for leadership and innovation.</p>
+      <a href="./path-to-resume.pdf" download="Feda_Fitian_Resume" class="download-resume">Download Resume</a>
+    </div>
+  </section>
+<div class="body-without-nav" style="line-height: 22px;">
 
     <!-- Resume Content -->
-    <main>
-        <div class="download-resume">
-                  <a href="files/Resume - Feda Fitian.pdf" download class="download-resume">Download Resume</a>
-
-        </div>
         <!-- Summary Section -->
         <section id="summary">
             <h1>Feda Fitian</h1>
-            <p><strong>Seattle, WA</strong> | <a
-                    href="mailto:fedafitian@gmail.com">fedafitian@gmail.com</a> | <a
-                    href="https://www.linkedin.com/in/fedafitian/">LinkedIn</a></p>
-            <p>
+            <div class="icon-text">
+                <img src="./img/icons/pin-icon.png" alt="Icon" class="icon">
+                <p><strong>Seattle, WA</strong> |</p> 
+                   <p><a href="mailto:fedafitian@gmail.com">fedafitian@gmail.com</a> |</p>
+                    <p><a href="https://www.linkedin.com/in/fedafitian/">LinkedIn</a> |</p> 
+                    <p><a href="https://fedafitian.github.io/portfolio/">Portfolio &#x28;this site &#x1F60A&#x29; </a></p>
+                </div>
+            <p id="resume-summary">
                 Passionate and creative leader with over 10 years of experience turning ideas into impactful products,
                 driving innovation,
                 and building strategies that work. I’ve helped launch scalable solutions, managed product life cycles,
@@ -57,93 +68,106 @@
                 meaningful results.
             </p>
         </section>
+        <br>
         <hr class="solid">
 
         <!-- Experience Section -->
         <section id="experience">
-            <h2>Professional Experience</h2>
+            <br>
+            <h2>Experience</h2>
+            <h3>F5 | Seattle WA | September 2019 - Present </h3>
+            <sl-details summary="Chief of Staff to Chief Technology Officer" class="custom-icons">
+                <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+                <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+            <h3>Chief of Staff to Chief Technology Officer | F5</h3>
+              <p><strong>Duration:</strong> Apr 2024 – Present </p>
+            <ul>
+              <li>Defined product vision and CTO strategy for AI, Observability, and ADC technologies.</li>
+              <li>Managed $11M+ budget and created two-year roadmaps for innovation and key projects.</li>
+              <li>Developed presentations and pitch decks for executive meetings and customer engagements.</li>
+            </ul>
+        </sl-details>
+    
+        <sl-details summary="Senior Technical Program Manager, Office of the CTO" class="custom-icons">
+            <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+            <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+            <h3>Senior Technical Program Manager | F5</h3>
+              <p><strong>Duration:</strong> May 2022 – Apr 2024</p>
+            <ul>
+              <li>Designed and scaled F5’s first global innovation program, generating 350+ project ideas and overseeing them through their lifecycle from concept to launch.</li>
+              <li>Launched F5’s first AI program, creating a central source of truth for the ethical, secure, and responsible use of OpenAI technologies and LLMs.</li>
+              <li>Organized 25+ global innovation events, such as hackathons and ideation workshops, engaging 1,400+ innovators across 34 countries.</li>
+              <li>Collaborated with engineering, sales, UX/UI, marketing, and leadership to build go-to-market strategies and identify innovative product opportunities</li>
+              <li>Led a team of 15+ engineers and interns to deliver in-house apps, including an AI website, innovation hub, automated idea management platform, and rewards dashboard.</li>
+            </ul>
+        </sl-details>
 
-            <!-- F5 Section -->
-            <article>
-                <h3>F5 | Seattle, WA</h3>
-                <h4>Chief of Staff, Office of the CTO</h4>
-                <p><strong>April 2024 – Present</strong></p>
-                <ul>
-                    <li><strong>Product Vision & Strategy</strong>Defined charters for Observability, AI, and ADCs,
-                        aligning tech vision with C-suite priorities and market trends.</li>
-                    <li>Managed an $11M+ budget to prioritize resources for innovation and accelerator project launches.
-                    </li>
-                    <li>Created two-year roadmaps for AI and ADC product strategies and developed executive-level pitch
-                        decks used in strategic meetings.</li>
-                </ul>
+        <sl-details summary="Product Management Engineer" class="custom-icons">
+            <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+            <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
 
-                <h4>Senior Technical Program Manager, Open Innovation</h4>
-                <p><strong>May 2022 – April 2024</strong></p>
-                <ul>
-                    <li>Designed and scaled F5’s first global innovation program, driving and housing the creation of
-                        over 350+ product ideas.</li>
-                    <li>Established F5’s first AI program, creating a central source of truth for the ethical, secure,
-                        and responsible use of OpenAI technologies and LLMs.</li>
-                    <li>Hosted 20+ global innovation events, including hackathons and ideation workshops, which engaged
-                        over 1,400 F5 innovators across 34 countries.</li>
-                    <li>Collaborated with engineering, sales, UX/UI, marketing, and leadership to identify high-impact
-                        opportunities, develop PRFAQs, go-to-market strategies, and deliver roadmaps that secured
-                        executive buy-in.</li>
-                    <li>Led a team of 15+ engineers and interns to deliver AI-powered tools and in-house applications.
-                    </li>
-                </ul>
+            <h3>Product Management Engineer (AKA Technical Product Manager)| F5</h3>
+              <p><strong>Duration:</strong> Sep 2019 – Sep 2021</p>
+              <p style="font-style: italic; font-size: 0.75rem;">*The best way to describe this role is as a combination of Technical Product Manager and a Product Engineer.</p>
+            <ul>
+              <li>Led the Early Access (EA) and Limited Availability programs for F5’s next-gen BIG-IP product, working with major customers like MasterCard, Walmart, and Ford to tailor features and shape product roadmaps based on feedback.</li>
+              <li>Improved new product usability by resolving 90% of reported issues pre-launch through close collaboration with customers and engineering teams.</li>
+            <li>Developed impactful sales enablement materials, technical documentation, and end-to-end live product demos, boosting customer adoption and driving internal alignment across key stakeholders..</li>
+            </ul>
+        </sl-details>
 
-                <h4>Product Engineer</h4>
-                <p><strong>October 2021 – April 2022</strong></p>
-                <ul>
-                    <li>Created and led the Early Access (EA) program F5’s next-gen BIG-IP product for 30+ premium customers like MasterCard, Walmart, and Ford</li>
-                    <li>Integrated customer feedback to refine product roadmaps for virtual and hardware versions of new product, resolving 95% of reported issues pre-launch and refining product features.</li>
-                    <li>Delivered sales enablement materials, end-to-end product demos, and technical documentation that boosted customer onboarding.</li>
-                </ul>
-                <h4>Software Engineer</h4>
-                <p><strong>September 2019 – September 2021</strong></p>
-                <ul>
-                    <li>Full Stack DevOps Engineer on BIG-IP System Team responsible for overseeing quality gates, architecture, and infrastructure for the product pipeline used by 1,000+ engineers.</li>
-                    <li>Developed a suite of tools with Go, Docker, Kubernetes, and CI/CD pipelines to package component releases into unified software builds, automate developer best practices, and implement end-to-end unit testing.</li>
-                </ul>
-            </article>
+        <sl-details summary="Software Engineer" class="custom-icons">
+            <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+            <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
 
-            <!-- Other Experiences -->
-            <article>
-                <h3>Girls Who Code | Miami, FL & Seattle, WA</h3>
-                <h4>Lead Instructor</h4>
-                <p><strong>June 2018 – August 2019</strong></p>
-                <ul>
-                    <li>Designed and delivered STEM lessons to teach high school girls computer science and engineering, leading a teaching team to ensure smooth program execution and expanding community impact through targeted outreach initiatives.
-                    </li>
-                </ul>
-            </article>
+            <h3>Software Engineer | F5</h3>
+              <p><strong>Duration:</strong> Sep 2019 – Sep 2021</p>
+            <ul>
+              <li>Full Stack DevOps Engineer on BIG-IP System Team responsible for integrating quality gates and tooling within BIG-IP’s product pipeline, supporting 2,000+ engineers with streamlined builds and releases.</li>
+              <li>Developed a suite of tools with Go, Docker, Kubernetes, and CI/CD pipelines to package component releases into unified software builds, automate developer best practices, and implement end-to-end unit testing.</li>
+            </ul>
+          </section>
+        </sl-details>
 
-            <article>
-                <h3>Lufthansa Technik | Miami, FL</h3>
-                <h4>Data Analyst & Quality Engineer</h4>
-                <p><strong>June 2018 – August 2019</strong></p>
-                <ul>
-                    <li>Improved customer retention by enhancing user experiences, achieving a 90% repeat customer base.
-                    </li>
-                    <li>Developed audit plans compliant with FAA regulations and aerospace quality standards.</li>
-                </ul>
-            </article>
+        <h3>Girls Who Code | Seattle WA & Miami, FL | June 2018 - August 2019 </h3>
+        <sl-details summary="Lead Instructor" class="custom-icons">
+            <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+            <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+        <ul>
+            <li>Designed and taught hands-on STEM lessons in computer science and engineering, making technical concepts fun and accessible for high school female students during Girls Who Code summer programs.</li>
+                <li>Mentored and led a teaching team, ensuring smooth program execution and expanding community outreach efforts.</li>
+          </ul>
+        </sl-details>
 
-            <article>
-                <h3>Zaniac | Miami, FL</h3>
-                <h4>Curriculum Developer & Instructor</h4>
-                <p><strong>April 2016 – June 2018</strong></p>
-                <ul>
-                    <li>Established three STEM curriculums, two of which turned into best sellers, that were purchased by Zaniac’s headquarters and adopted across nine U.S. states and ten different campuses. </li>
-                <li>Trained instructors for seamless implementation and successfully pitched the new courses to parent customers, driving enrollment and engagement.</li>
-                </ul>
-            </article>
-        </section>
+        <h3>Lufthansa Technik | Miami, FL | November 2018 - June 2019 </h3>
+        <sl-details summary="Intern, Data Analyst and Quality Intern" class="custom-icons">
+            <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+            <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+        <ul>
+            <li>Achieved 95% customer retention by optimizing the engine teardown process, leveraging user experience data, and optimizing processes to drive repeat business and open new revenue opportunities.</li>
+                <li>Developed FAA-compliant audit plans by collaborating with cross-functional teams across the U.S. and Germany to meet aerospace quality standards.</li>
+          </ul>
+        </sl-details>
+        <h3>Zaniac | Miami, FL | April 2016 - June 2018 </h3>
+        <sl-details summary="Curriculum Developer and Instructor" class="custom-icons">
+            <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+            <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+        <ul>
+            <li>Established three STEM curriculums, two of which turned into best sellers, that were purchased by Zaniac’s headquarters and adopted across nine U.S. states and ten different campuses.</li>
+            <li>Trained instructors for seamless implementation and successfully pitched the new courses to parent customers, driving enrollment and engagement.</li>
+        <li>Tutored Pre-K-8 students in subjects such as engineering, coding, math, robotics, design, and writing.</li>
+          </ul>
+
+          <p>Learn more about the curriculums I developed <a href="">here!</a></p>
+        </sl-details>
+        <br>
         <hr class="solid">
+
+
 
         <!-- Education Section -->
         <section id="education">
+            <br>
             <h2>Education</h2>
             <ul>
                 <li><strong>University of Miami</strong> | Bachelor of Science in Neuroscience & Computer Science | May
@@ -151,21 +175,27 @@
                 <li><strong>University of Washington</strong> | Software Product Management Certification | August 2022
                 </li>
             </ul>
+            <br>
         </section>
         <hr class="solid">
 
         <!-- Skills Section -->
         <section id="skills">
-            <h2>Skills</h2>
+            <br>
+            <h2>Key Skills</h2>
             <ul>
-                <li>Product Strategy & Roadmapping</li>
-                <li>Cross-Functional Leadership</li>
-                <li>Data-Driven Decision-Making</li>
-                <li>User-Centered Design & Experience</li>
-                <li>Research & Development</li>
+              <li><strong>Product & Innovation Leadership:</strong> Vision, Strategy, Roadmapping, Market Analysis</li>
+              <li><strong>Cross-Functional Collaboration:</strong> Engineering, Design, Marketing, Sales, Executive Teams</li>
+              <li><strong>Data-Driven Decision-Making:</strong> Metrics, KPIs, Insights Analysis</li>
+              <li><strong>Customer-Centered Design:</strong> UX, Feedback Integration, Go-to-Market Strategy</li>
+              <li><strong>STEM & Education Expertise:</strong> Curriculum Development, Tech-Driven Learning Tools</li>
+              <li><strong>Engineering:</strong> CI/CD, Go, Python, Linux, Automated Testing, CSS, HTML, TypeScript, React, Django</li>
+              <li><strong>Inclusivity: </strong>Community Building, Driving Diversity and Inclusion Initiatives</li>
             </ul>
-        </section>
+          </section>
+        <br>
         <hr class="solid">
+        <br>
 
         <!-- Volunteering Section -->
         <section id="volunteering" class="content-section">
@@ -173,45 +203,63 @@
           
             <!-- Girls Who Code -->
             <article class="volunteer-item">
-              <h3>Mentor | Girls Who Code</h3>
-              <p><strong>Duration:</strong> June 2018 – Present (6 years 8 months)</p>
+              <h3>Girls Who Code | June 2018 - Present </h3>
+              <sl-details summary="Mentor" class="custom-icons">
+                <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+                <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+                <h3>Mentor</h3>
+              <p><strong>Duration:</strong> June 2018 – Present </p>
               <p>
                 Empowering young women in STEM by mentoring and guiding them through computer science and engineering challenges.
               </p>
-              <!-- <ul>
-                <li>Supported students in navigating their first coding projects, from games to websites.</li>
-                <li>Provided career advice and technical guidance, fostering confidence and curiosity in STEM fields.</li>
-                <li>Conducted workshops on technical skills, college readiness, and personal development.</li>
-              </ul> -->
+              <ul>
+                <li>Supporting students in navigating their first coding projects, from games to websites.</li>
+                <li>Providing career advice and technical guidance, fostering confidence and curiosity in STEM fields.</li>
+                <li>Conducting workshops on technical skills, college readiness, and personal development.</li>
+              </ul>
+            </sl-details>
             </article>
+        
           
             <!-- F5 Appreciates Blackness -->
             <article class="volunteer-item">
-              <h3>Leadership Team | F5 Appreciates Blackness (FAB)</h3>
-              <p><strong>Duration:</strong> April 2021 – Present (3 years 10 months)</p>
+                <h3>F5 Appreciates Blackness (FAB) Employee Inclusion Group</h3>
+
+                <sl-details summary="STEM Outreach Leader on Leadership Team | April 2020 – Present" class="custom-icons">
+                    <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+                    <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+                    <h3>STEM Outreach Leader on Leadership Team</h3>
+                  <p><strong>Duration:</strong> June 2018 – Present </p>
               <p>
-                Promoting diversity and inclusion at F5, with a specific emphasis on STEM outreach initiatives.
+                Serving on the FAB leadership team with a focus on STEM outreach. In this role, I help promote diversity and inclusion at F5, with a specific emphasis on STEM outreach initiatives.
               </p>
-              <!-- <ul>
+              <ul>
                 <li>Organized STEM workshops and mentorship programs targeting underrepresented groups.</li>
                 <li>Partnered with Howard University to guide students through internships, technical projects, and professional development.</li>
                 <li>Hosted panel discussions on allyship, career growth, and building equitable workplaces.</li>
                 <li>Represented F5 at conferences like <strong>AfroTech</strong> to recruit top talent and expand outreach.</li>
-              </ul> -->
+              </ul>
+            </sl-details>
             </article>
           
             <!-- Technology Access Foundation -->
             <article class="volunteer-item">
-              <h3>STEM Outreach Volunteer & Alliance Partner | Technology Access Foundation (TAF)</h3>
-              <p><strong>Duration:</strong> November 2020 – Present (4 years 3 months)</p>
+                <h3>Technology Access Foundation (TAF)</h3>
+
+                <sl-details summary="STEM Outreach Volunteer & Alliance Partner | April 2021 – Present" class="custom-icons">
+                    <sl-icon name="plus-square" slot="expand-icon"></sl-icon>
+                    <sl-icon name="dash-square" slot="collapse-icon"></sl-icon>
+                    <h3>STEM Outreach Volunteer & Alliance Partner</h3>
+                  <p><strong>Duration:</strong> November 2020 – Present </p>
               <p>
                 Bridging the gap in STEM education for underserved communities through hands-on learning opportunities.
               </p>
               <ul>
-                <li>Delivered engaging STEM workshops to K-12 students, covering engineering, programming, and design concepts.</li>
-                <li>Mentored students to explore real-world applications of STEM and pursue related careers.</li>
-                <li>Strengthened community partnerships by connecting TAF with industry resources to enhance their impact.</li>
+                <li>Delivering engaging STEM workshops to K-12 students, covering engineering, programming, and design concepts.</li>
+                <li>Mentoring students to explore real-world applications of STEM and pursue related careers.</li>
+                <li>Strengthening community partnerships by connecting TAF with industry resources to enhance their impact.</li>
               </ul>
+            </sl-details>
             </article>
           </section>
           
@@ -220,7 +268,7 @@
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2024 Feda Fitian. All Rights Reserved.</p>
+    <p>&copy; 2025 Feda Fitian. All Rights Reserved.</p>
 </footer>
 </body>
 
