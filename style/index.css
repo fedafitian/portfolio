@@ -684,7 +684,7 @@ sl-details.custom-icons::part(content) {
 .big-ip-prgm img {
   max-width: 50%; /* Limit image width to prevent it from taking too much space */
   height: auto; /* Maintain aspect ratio */
-  margin-left: auto;
+  margin-left: auto; 
 }
 
 .big-ip-prgm h2 {
@@ -693,6 +693,32 @@ sl-details.custom-icons::part(content) {
   font-size: 1.5rem; /* Adjust as needed */
   max-width: 45%; /* Ensure text doesn't overflow and stays next to the image */
   word-wrap: break-word; /* Handle long text properly */
+}
+
+
+/* Responsive styling for screens smaller than 480px */
+@media (max-width: 480px) {
+  .big-ip-prgm {
+    flex-direction: row; /* Keep text and image side by side */
+    align-items: flex-start; /* Align text and image at the top */
+    padding: 0; /* Remove padding from the container */
+  }
+
+  .big-ip-prgm img {
+    max-width: 40%; /* Limit image to half the container width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Ensure no padding around the image */
+    
+  }
+
+  .big-ip-prgm h2 {
+    max-width: 50%; /* Allow text to take half the container width */
+    font-size: 1.2rem; /* Reduce font size for smaller screens */
+    text-align: left; /* Keep text aligned to the left */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Ensure no padding around the text */
+  }
 }
 
 /* LHT Program Styling */
@@ -805,3 +831,240 @@ footer {
 footer p {
   margin: 0; /* Remove any default margin */
 }
+
+/* Chevron Styling */
+.chevron-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 13px;
+  margin: 50px;
+}
+
+/* Chevron Base Style */
+.chevron {
+  position: relative;
+  background-color: #0073e6;
+  color: white;
+  width: calc(15vw); /* Responsive width based on viewport width */
+  max-width: 160px; /* Prevent it from getting too large */
+  min-width: 80px; /* Prevent it from shrinking too much */
+  height: 50px; /* Fixed height for consistency */
+  clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%, 5% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, outline 0.3s ease;
+}
+
+
+/* Icon Styling */
+.chevron img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Title Styling */
+.title {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  width: 140px;
+  word-wrap: break-word;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Description Styling */
+.description {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  width: 140px;
+  word-wrap: break-word;
+  min-height: 40px;
+}
+
+/* Hover Effect */
+.chevron:hover {
+  background-color: #005bb5;
+}
+
+/* Selected Chevron */
+.chevron.selected {
+  background-color: #ffa500;
+  color: black;
+}
+
+/* Greyed-out inactive chevrons, titles, and descriptions */
+.chevron-container.dimmed .chevron:not(.selected),
+.chevron-container.dimmed .title:not(.selected-title),
+.chevron-container.dimmed .description:not(.selected-description) {
+  opacity: 0.5;
+}
+
+/* Dim effect for non-hovered items */
+.chevron-container.hover-dim .chevron:not(:hover):not(.selected),
+.chevron-container.hover-dim .title:not(:hover):not(.selected-title),
+.chevron-container.hover-dim .description:not(:hover):not(.selected-description) {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* Keep chevron, title, and description fully visible on hover */
+.chevron-container.hover-dim div:hover .chevron,
+.chevron-container.hover-dim div:hover .title,
+.chevron-container.hover-dim div:hover .description {
+  opacity: 1 !important;
+}
+
+/* Responsive Design for Width Between 651px and 1000px */
+@media (min-width: 651px) and (max-width: 1000px) {
+  .chevron-container {
+    display: flex;
+    justify-content: space-evenly; /* Distribute chevrons evenly */
+    align-items: center; /* Vertically align items */
+    gap: 10px; /* Adjust spacing between chevrons */
+    width: 95%; /* Scale container width to viewport */
+    margin: 20px auto; /* Center horizontally */
+    max-width: 1000px; /* Prevent container from growing too wide */
+  }
+
+  .chevron {
+    max-width: 120px; /* Limit maximum chevron width */
+    min-width: 30px; /* Set a reasonable minimum width */
+    height: 50px; /* Adjust height for balance */
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Account for padding/borders */
+    transition: width 0.3s ease, height 0.3s ease; /* Smooth resizing */
+  }
+  
+  .chevron img {
+    width: auto;
+    height: 55%; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure icons fit properly */
+    transition: width 0.3s ease; /* Smooth scaling */
+  }
+
+  .title {
+    font-size: 11px; /* Adjust font size */
+    width: 100%; /* Ensure title spans the chevron width */
+    text-align: center; /* Center-align titles */
+    margin-top: 10px; /* Add spacing between chevron and title */
+    word-wrap: break-word; /* Ensure long titles wrap */
+    overflow-wrap: break-word; /* Extra compatibility for wrapping */
+    white-space: normal; /* Allow text to wrap */
+    line-height: 1.4; /* Improve readability for multi-line text */
+  }
+
+  .description {
+  
+    
+    width: 100%; /* Ensure description spans the chevron width */
+    text-align: center; /* Center-align descriptions */
+    margin-top: 5px; /* Add spacing between title and description */
+    line-height: 1.4; /* Improve readability */
+    word-wrap: break-word; /* Ensure long text wraps */
+    overflow-wrap: break-word; /* Extra compatibility for wrapping */
+    white-space: normal; /* Allow text to wrap */
+  }
+}
+
+
+/* Responsive Design for Width <= 650px */
+@media (max-width: 650px) {
+  .chevron-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .chevron {
+    width: 80%;
+    height: 60px;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: 14px;
+    width: 80%;
+    text-align: center;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .description {
+    font-size: 12px;
+    margin-left: 15px;
+    margin-top: 0;
+    text-align: left;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  .chevron-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+.chevron[data-step="1"] {
+  background-color: #10567E; /* Blue */
+}
+
+.chevron[data-step="2"] {
+  background-color: #136F90; /* Green */
+}
+
+.chevron[data-step="3"] {
+  background-color: #148EA3; /* Yellow */
+}
+
+.chevron[data-step="4"] {
+  background-color: #0E958C; /* Red */
+}
+
+.chevron[data-step="5"] {
+  background-color: #0AAE8A; /* Purple */
+}
+
+.chevron[data-step="6"] {
+  background-color: #07C586; /* Teal */
+}
+
+.card-image {
+  max-width: 35%;
+  /* margin-right: 20px; */
+  font-size: 11px;
+}
+
+.card-image:nth-child(1) {
+  max-width: 17%;
+  /* margin-left: 8%;
+  margin-right: 8%; */
+}
+
+.branding {
+  display: flex;
+  justify-content: space-evenly; /* Distribute items evenly, including space between and around them */
+  align-items: center; /* Vertically center items */
+  height: 100%; /* Optional: Adjust height */
+  margin: 2%;
+
+}
+

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chevron with Icons and Titles</title>
+  <style>
+    /* Chevron Container */
+    .chevron-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 13px; /* Space between chevrons */
+      margin: 50px;
+    }
+
+    /* Chevron Base Style */
+    .chevron {
+      position: relative;
+      background-color: #0073e6; /* Default blue */
+      color: white;
+      width: 140px; /* Fixed width for uniformity */
+      height: 60px; /* Fixed height for consistency */
+      clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%, 5% 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease, opacity 0.3s ease, outline 0.3s ease;
+    }
+
+    /* Icon Styling (centered inside chevron) */
+    .chevron img {
+      width: 32px; /* Adjust icon size */
+      height: 32px; /* Adjust icon size */
+      object-fit: contain; /* Ensure the image fits properly */
+    }
+
+/* Title Styling (beneath chevron) */
+.title {
+  margin-top: 15px;
+  font-size: 14px; /* Adjust font size */
+  color: #333;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  width: 140px; /* Matches chevron width */
+  word-wrap: break-word; /* Wraps text if it exceeds one line */
+  min-height: 40px; /* Ensures consistent height for single or multi-line titles */
+  display: flex; /* Centers multi-line text */
+  /* align-items: center; */
+  justify-content: center;
+}
+
+/* Description Styling */
+.description {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  width: 140px;
+  word-wrap: break-word;
+  min-height: 40px; /* Ensures consistent spacing for descriptions */
+}
+
+
+    /* Hover Effect */
+    .chevron:hover {
+      background-color: #005bb5; /* Darker blue */
+    }
+
+    /* Selected Chevron */
+    .chevron.selected {
+      background-color: #ffa500; /* Orange */
+      color: black; /* Contrast text color */
+    }
+
+    /* Greyed-out inactive chevrons, titles, and descriptions */
+    .chevron-container.dimmed .chevron:not(.selected),
+    .chevron-container.dimmed .title:not(.selected-title),
+    .chevron-container.dimmed .description:not(.selected-description) {
+      opacity: 0.5;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .chevron {
+        width: 100px;
+        height: 50px;
+      }
+
+      .chevron img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .title {
+        font-size: 12px;
+        width: 100px; /* Matches reduced chevron width */
+      }
+
+      .description {
+        font-size: 10px;
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="chevron-container">
+    <!-- Chevron 1 -->
+    <div>
+      <div class="chevron" data-step="1">
+        <img src="img/icons/idea-lifecycle/magnifying-glass.png" alt="Search Icon">
+      </div>
+      <div class="title">Idea Sourcing</div>
+      <p class="description">Gather innovative ideas from across the organization.</p>
+    </div>
+
+    <!-- Chevron 2 -->
+    <div>
+      <div class="chevron" data-step="2">
+        <img src="img/icons/idea-lifecycle/project-acceptance.png" alt="Plan Icon">
+      </div>
+      <div class="title">Project Acceptance</div>
+      <p class="description">Evaluate and approve ideas to move forward.</p>
+    </div>
+
+    <!-- Chevron 3 -->
+    <div>
+      <div class="chevron" data-step="3">
+        <img src="img/icons/idea-lifecycle/wrench.png" alt="Build Icon">
+      </div>
+      <div class="title">PoC Development</div>
+      <p class="description">Develop proof-of-concept prototypes for selected ideas.</p>
+    </div>
+
+    <!-- Chevron 4 -->
+    <div>
+      <div class="chevron" data-step="4">
+        <img src="img/icons/idea-lifecycle/lightbulb.png" alt="Idea Icon">
+      </div>
+      <div class="title">Review by Innovation Board</div>
+      <p class="description">Present prototypes to the board for review and feedback.</p>
+    </div>
+
+    <!-- Chevron 5 -->
+    <div>
+      <div class="chevron" data-step="5">
+        <img src="img/icons/idea-lifecycle/outcome-and-decision.png" alt="Analyze Icon">
+      </div>
+      <div class="title">Outcome and Decision</div>
+      <p class="description">Decide the next steps based on outcomes and analysis.</p>
+    </div>
+
+    <!-- Chevron 6 -->
+    <div>
+      <div class="chevron" data-step="6">
+        <img src="img/icons/idea-lifecycle/implementation.png" alt="Execute Icon">
+      </div>
+      <div class="title">Execute</div>
+      <p class="description">Implement the finalized ideas into actionable solutions.</p>
+    </div>
+  </div>
+
+  <script>
+    // Select all chevrons and their parent container
+    const chevrons = document.querySelectorAll('.chevron');
+    const chevronContainer = document.querySelector('.chevron-container');
+    const titles = document.querySelectorAll('.title');
+    const descriptions = document.querySelectorAll('.description');
+
+    // Add click event listener to each chevron
+    chevrons.forEach((chevron, index) => {
+      chevron.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event bubbling
+
+        // If clicked chevron is already selected, unselect it
+        if (chevron.classList.contains('selected')) {
+          chevron.classList.remove('selected');
+          titles[index].classList.remove('selected-title');
+          descriptions[index].classList.remove('selected-description');
+          chevronContainer.classList.remove('dimmed');
+        } else {
+          // Remove "selected" class from all chevrons
+          chevrons.forEach((c) => c.classList.remove('selected'));
+          titles.forEach((t) => t.classList.remove('selected-title'));
+          descriptions.forEach((d) => d.classList.remove('selected-description'));
+
+          // Add "selected" to the clicked chevron
+          chevron.classList.add('selected');
+          titles[index].classList.add('selected-title');
+          descriptions[index].classList.add('selected-description');
+          chevronContainer.classList.add('dimmed');
+        }
+      });
+    });
+
+    // Deselect all chevrons when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!chevronContainer.contains(e.target)) {
+        chevrons.forEach((chevron) => chevron.classList.remove('selected'));
+        titles.forEach((title) => title.classList.remove('selected-title'));
+        descriptions.forEach((desc) => desc.classList.remove('selected-description'));
+        chevronContainer.classList.remove('dimmed');
+      }
+    });
+  </script>
+</body>
+</html>
