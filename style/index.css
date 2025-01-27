@@ -1068,3 +1068,116 @@ footer p {
 
 }
 
+
+
+/* AI Program Design table */
+
+.table {
+  display: grid;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+  z-index: 1;
+}
+
+.number {
+  flex: 0 0 80px; /* Fixed width for the number column */
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  background-color: inherit; /* Matches the row background */
+}
+
+.content {
+  flex: 1;
+  padding: 3px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.content h2 {
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+  color: #333;
+}
+
+.content p {
+  margin: 2px 0 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* White line extending across the row */
+.row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 80px; /* Start after the number column */
+  width: 5px; /* Width of the white line */
+  background-color: white;
+  z-index: 0; /* Ensure it is behind other content */
+}
+
+/* Downward-facing triangle */
+.row::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: 40vh;
+  width: 0;
+  height: 40%;
+  border-style: solid;
+  border-width: 70px 10vw 10vw 10vw; /* Adjust triangle size (height: 30px) */
+  border-color: white transparent transparent transparent; /* White triangle */
+  z-index: 3; /*Place triangle behind content */
+}
+
+/* Alternating Background Colors for 9 Rows */
+.row:nth-child(1) {
+  background-color: #ff6f61; /* Red */
+}
+
+.row:nth-child(2) {
+  background-color: #ffb74d; /* Orange */
+}
+
+.row:nth-child(3) {
+  background-color: #ffd54f; /* Yellow */
+}
+
+.row:nth-child(4) {
+  background-color: #81c784; /* Green */
+}
+
+.row:nth-child(5) {
+  background-color: #64b5f6; /* Blue */
+}
+
+.row:nth-child(6) {
+  background-color: #9575cd; /* Purple */
+}
+
+.row:nth-child(7) {
+  background-color: #f06292; /* Pink */
+}
+
+.row:nth-child(8) {
+  background-color: #4dd0e1; /* Teal */
+}
+
+.row:nth-child(9) {
+  background-color: #aed581; /* Light Green */
+}
