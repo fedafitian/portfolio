@@ -1075,6 +1075,8 @@ footer p {
 .table {
   display: grid;
   gap: 10px;
+  padding-right: 10%;
+  padding-left: 2%;
 }
 
 .row {
@@ -1082,8 +1084,8 @@ footer p {
   align-items: center;
   position: relative;
   overflow: hidden;
-  height: 150px;
   z-index: 1;
+  background-color: #F8F8F6;
 }
 
 .number {
@@ -1095,7 +1097,7 @@ footer p {
   justify-content: center;
   align-items: center;
   position: relative;
-
+  color: #000000;
   background-color: inherit; /* Matches the row background */
 }
 
@@ -1110,13 +1112,14 @@ footer p {
   margin: 0;
   font-size: 1rem;
   text-align: left;
-  color: #333;
+  /* color: white; */
+  color: #660708;
 }
 
 .content p {
   margin: 2px 0 0;
   font-size: 1rem;
-  color: #666;
+  /* color: white; */
 }
 
 /* White line extending across the row */
@@ -1131,53 +1134,74 @@ footer p {
   z-index: 0; /* Ensure it is behind other content */
 }
 
-/* Downward-facing triangle */
-.row::after {
-  content: "";
-  position: absolute;
-  bottom: -80px;
-  left: 40vh;
-  width: 0;
-  height: 40%;
-  border-style: solid;
-  border-width: 70px 10vw 10vw 10vw; /* Adjust triangle size (height: 30px) */
-  border-color: white transparent transparent transparent; /* White triangle */
-  z-index: 3; /*Place triangle behind content */
-}
 
 /* Alternating Background Colors for 9 Rows */
-.row:nth-child(1) {
-  background-color: #ff6f61; /* Red */
-}
-
-.row:nth-child(2) {
-  background-color: #ffb74d; /* Orange */
-}
-
-.row:nth-child(3) {
-  background-color: #ffd54f; /* Yellow */
-}
-
-.row:nth-child(4) {
-  background-color: #81c784; /* Green */
-}
-
-.row:nth-child(5) {
-  background-color: #64b5f6; /* Blue */
-}
-
-.row:nth-child(6) {
-  background-color: #9575cd; /* Purple */
-}
-
-.row:nth-child(7) {
-  background-color: #f06292; /* Pink */
+/* .row:nth-child(9) {
+  background-color: #ba181b; 
 }
 
 .row:nth-child(8) {
-  background-color: #4dd0e1; /* Teal */
+  background-color: #a4161a; 
 }
 
-.row:nth-child(9) {
-  background-color: #aed581; /* Light Green */
+.row:nth-child(7) {
+  background-color: #850f11; 
+}
+
+.row:nth-child(6) {
+  background-color: #660708;
+}
+
+.row:nth-child(5) {
+  background-color: #3e1113;
+}
+
+.row:nth-child(4) {
+  background-color: #F8F8F6; 
+}
+
+.row:nth-child(3) {
+  background-color: #F8F8F6;
+}
+
+.row:nth-child(2) {
+  background-color: #F8F8F6;
+}
+
+.row:nth-child(1) {
+  background-color: #F8F8F6; 
+} */
+
+.icon-ai-pgrm-row {
+  width:50px; /* Set a fixed width for the icon */
+  height: 50px; /* Set a fixed height for the icon */
+  object-fit: contain; /* Ensure the icon maintains aspect ratio */
+  margin-right: 10px; /* Add spacing to the right of the icon */
+  align-self: center;
+}
+
+
+.icon-text-container {
+  display: flex; /* Align icon and text side by side */
+  align-items: flex-start; /* Align items at the top */
+  gap: 10px; /* Space between the icon and text */
+}
+
+/* Text in rows 1 to 8 should be white */
+/* .row:nth-child(-n+9) .content {
+  color: white;
+} */
+
+/* .row:nth-child(-n+9) .content h2{
+  color: #660708;
+} */
+
+/* Text in row 9 should be black */
+.row:nth-child(1) .content,  .row:nth-child(2) .content, .row:nth-child(3) .content, .row:nth-child(4) .content{
+  color: black;
+}
+
+/* Text in row 9 should be black */
+.row:nth-child(1) .number{
+  color: black;
 }
