@@ -458,7 +458,7 @@ hr.solid {
 
 
 /* Hyperlinks */
-.project-header a, .content-section a, #summary a{
+.body-without-nav a, .project-header a, .content-section a, #summary a{
   text-decoration: underline;
   color: #f04e41;
 
@@ -1204,4 +1204,45 @@ footer p {
 /* Text in row 9 should be black */
 .row:nth-child(1) .number{
   color: black;
+}
+
+/* Scroll position when navigating via anchor links */
+h2 {
+  scroll-margin-top: 150px; /* Adjust this value to control spacing */
+}
+
+/* customer programs bullet list */
+.no-bullets {
+  list-style-type: none; /* Removes bullets */
+
+}
+
+/* Customer Programs Image Slider */
+
+/* Carousel container */
+.image-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image track (scrolling container) */
+.image-track {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: max-content;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Style for images */
+.carousel-image {
+  width: 120px;
+  height: auto;
+  margin: 0 15px;
+  display: block;
 }
