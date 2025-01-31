@@ -754,20 +754,21 @@ sl-details.custom-icons::part(content) {
     max-width: 80%; /* Adjust width for smaller layout */
     white-space: normal; /* Allow wrapping for smaller screens */
   }
+
 }
 
 @media (max-width: 480px) { /* For mobile screens */
   .big-ip-prgm h2,
   .lht-prgm h2 {
-    font-size: 1rem; /* Further reduce font size for small screens */
-    max-width: 90%; /* Allow text to occupy more space */
+    font-size: 0.8rem; /* Further reduce font size for small screens */
+    max-width: 50%; /* Allow text to occupy more space */
     white-space: normal; /* Ensure text wraps properly */
     text-align: center; /* Center-align text for better readability */
   }
 
   .big-ip-prgm img,
   .lht-prgm img {
-    max-width: 100%; /* Ensure the image scales properly */
+    max-width: 50%; /* Ensure the image scales properly */
     margin: 0 auto; /* Center the image */
   }
 }
@@ -1118,7 +1119,7 @@ footer p {
 
 .content p {
   margin: 2px 0 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   /* color: white; */
 }
 
@@ -1204,6 +1205,89 @@ footer p {
 /* Text in row 9 should be black */
 .row:nth-child(1) .number{
   color: black;
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 768px) {
+  .table {
+    padding: 2% 4%;
+  }
+
+  .row {
+    flex-wrap: wrap; /* Allow text and icon to wrap if needed */
+    align-items: center; /* Align items properly */
+    padding: 10px;
+  }
+
+  .number {
+    flex: 0 0 50px; /* Keep number fixed */
+    font-size: 1.5rem;
+    width: auto;
+    text-align: center;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .icon-text-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .icon-ai-pgrm-row {
+    width: 40px; /* Smaller icons for mobile */
+    height: 40px;
+  }
+  /* .icon-text-container img {
+    width: 20%;
+    display: block;
+    padding-left: 5%;
+  } */
+
+  .content h2 {
+    font-size: 1rem;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-text-container img {
+    width: 30%;
+    display: block;
+    padding-left: 10%;
+  }
+
+  .table {
+    padding: 1% 2%;
+  }
+
+  .row {
+    padding: 8px;
+  }
+
+  .number {
+    font-size: 1.3rem;
+  }
+
+  .icon-ai-pgrm-row {
+    width: 35px;
+    height: 35px;
+  }
+
+  .content h2 {
+    font-size: 0.8rem;
+  }
+
+  .content p {
+    font-size: 0.6rem;
+  }
 }
 
 /* Scroll position when navigating via anchor links */
