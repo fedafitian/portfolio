@@ -37,7 +37,7 @@ loadImages();
 
 // Function for infinite scrolling
 function startInfiniteScroll() {
-    let scrollSpeed = 1; // Adjust speed as needed
+    let scrollSpeed = 0.8; // Adjust speed as needed
     let scrollStep = 0;
 
     function scroll() {
