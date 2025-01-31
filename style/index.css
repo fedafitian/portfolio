@@ -458,7 +458,7 @@ hr.solid {
 
 
 /* Hyperlinks */
-.project-header a, .content-section a, #summary a{
+.body-without-nav a, .project-header a, .content-section a, #summary a{
   text-decoration: underline;
   color: #f04e41;
 
@@ -684,7 +684,7 @@ sl-details.custom-icons::part(content) {
 .big-ip-prgm img {
   max-width: 50%; /* Limit image width to prevent it from taking too much space */
   height: auto; /* Maintain aspect ratio */
-  margin-left: auto;
+  margin-left: auto; 
 }
 
 .big-ip-prgm h2 {
@@ -693,6 +693,32 @@ sl-details.custom-icons::part(content) {
   font-size: 1.5rem; /* Adjust as needed */
   max-width: 45%; /* Ensure text doesn't overflow and stays next to the image */
   word-wrap: break-word; /* Handle long text properly */
+}
+
+
+/* Responsive styling for screens smaller than 480px */
+@media (max-width: 480px) {
+  .big-ip-prgm {
+    flex-direction: row; /* Keep text and image side by side */
+    align-items: flex-start; /* Align text and image at the top */
+    padding: 0; /* Remove padding from the container */
+  }
+
+  .big-ip-prgm img {
+    max-width: 40%; /* Limit image to half the container width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Ensure no padding around the image */
+    
+  }
+
+  .big-ip-prgm h2 {
+    max-width: 50%; /* Allow text to take half the container width */
+    font-size: 1.2rem; /* Reduce font size for smaller screens */
+    text-align: left; /* Keep text aligned to the left */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Ensure no padding around the text */
+  }
 }
 
 /* LHT Program Styling */
@@ -728,20 +754,21 @@ sl-details.custom-icons::part(content) {
     max-width: 80%; /* Adjust width for smaller layout */
     white-space: normal; /* Allow wrapping for smaller screens */
   }
+
 }
 
 @media (max-width: 480px) { /* For mobile screens */
   .big-ip-prgm h2,
   .lht-prgm h2 {
-    font-size: 1rem; /* Further reduce font size for small screens */
-    max-width: 90%; /* Allow text to occupy more space */
+    font-size: 0.8rem; /* Further reduce font size for small screens */
+    max-width: 50%; /* Allow text to occupy more space */
     white-space: normal; /* Ensure text wraps properly */
     text-align: center; /* Center-align text for better readability */
   }
 
   .big-ip-prgm img,
   .lht-prgm img {
-    max-width: 100%; /* Ensure the image scales properly */
+    max-width: 50%; /* Ensure the image scales properly */
     margin: 0 auto; /* Center the image */
   }
 }
@@ -804,4 +831,506 @@ footer {
 
 footer p {
   margin: 0; /* Remove any default margin */
+}
+
+/* Chevron Styling */
+.chevron-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 13px;
+  margin: 50px;
+}
+
+/* Chevron Base Style */
+.chevron {
+  position: relative;
+  background-color: #0073e6;
+  color: white;
+  width: calc(15vw); /* Responsive width based on viewport width */
+  max-width: 160px; /* Prevent it from getting too large */
+  min-width: 80px; /* Prevent it from shrinking too much */
+  height: 50px; /* Fixed height for consistency */
+  clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%, 5% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, outline 0.3s ease;
+}
+
+
+/* Icon Styling */
+.chevron img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Title Styling */
+.title {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  width: 140px;
+  word-wrap: break-word;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Description Styling */
+.description {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  width: 140px;
+  word-wrap: break-word;
+  min-height: 40px;
+}
+
+/* Hover Effect */
+.chevron:hover {
+  background-color: #005bb5;
+}
+
+/* Selected Chevron */
+.chevron.selected {
+  background-color: #ffa500;
+  color: black;
+}
+
+/* Greyed-out inactive chevrons, titles, and descriptions */
+.chevron-container.dimmed .chevron:not(.selected),
+.chevron-container.dimmed .title:not(.selected-title),
+.chevron-container.dimmed .description:not(.selected-description) {
+  opacity: 0.5;
+}
+
+/* Dim effect for non-hovered items */
+.chevron-container.hover-dim .chevron:not(:hover):not(.selected),
+.chevron-container.hover-dim .title:not(:hover):not(.selected-title),
+.chevron-container.hover-dim .description:not(:hover):not(.selected-description) {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* Keep chevron, title, and description fully visible on hover */
+.chevron-container.hover-dim div:hover .chevron,
+.chevron-container.hover-dim div:hover .title,
+.chevron-container.hover-dim div:hover .description {
+  opacity: 1 !important;
+}
+
+/* Responsive Design for Width Between 651px and 1000px */
+@media (min-width: 651px) and (max-width: 1000px) {
+  .chevron-container {
+    display: flex;
+    justify-content: space-evenly; /* Distribute chevrons evenly */
+    align-items: center; /* Vertically align items */
+    gap: 10px; /* Adjust spacing between chevrons */
+    width: 95%; /* Scale container width to viewport */
+    margin: 20px auto; /* Center horizontally */
+    max-width: 1000px; /* Prevent container from growing too wide */
+  }
+
+  .chevron {
+    max-width: 120px; /* Limit maximum chevron width */
+    min-width: 30px; /* Set a reasonable minimum width */
+    height: 50px; /* Adjust height for balance */
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Account for padding/borders */
+    transition: width 0.3s ease, height 0.3s ease; /* Smooth resizing */
+  }
+  
+  .chevron img {
+    width: auto;
+    height: 55%; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure icons fit properly */
+    transition: width 0.3s ease; /* Smooth scaling */
+  }
+
+  .title {
+    font-size: 11px; /* Adjust font size */
+    width: 100%; /* Ensure title spans the chevron width */
+    text-align: center; /* Center-align titles */
+    margin-top: 10px; /* Add spacing between chevron and title */
+    word-wrap: break-word; /* Ensure long titles wrap */
+    overflow-wrap: break-word; /* Extra compatibility for wrapping */
+    white-space: normal; /* Allow text to wrap */
+    line-height: 1.4; /* Improve readability for multi-line text */
+  }
+
+  .description {
+  
+    
+    width: 100%; /* Ensure description spans the chevron width */
+    text-align: center; /* Center-align descriptions */
+    margin-top: 5px; /* Add spacing between title and description */
+    line-height: 1.4; /* Improve readability */
+    word-wrap: break-word; /* Ensure long text wraps */
+    overflow-wrap: break-word; /* Extra compatibility for wrapping */
+    white-space: normal; /* Allow text to wrap */
+  }
+}
+
+
+/* Responsive Design for Width <= 650px */
+@media (max-width: 650px) {
+  .chevron-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .chevron {
+    width: 80%;
+    height: 60px;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: 14px;
+    width: 80%;
+    text-align: center;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .description {
+    font-size: 12px;
+    margin-left: 15px;
+    margin-top: 0;
+    text-align: left;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  .chevron-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+.chevron[data-step="1"] {
+  background-color: #10567E; /* Blue */
+}
+
+.chevron[data-step="2"] {
+  background-color: #136F90; /* Green */
+}
+
+.chevron[data-step="3"] {
+  background-color: #148EA3; /* Yellow */
+}
+
+.chevron[data-step="4"] {
+  background-color: #0E958C; /* Red */
+}
+
+.chevron[data-step="5"] {
+  background-color: #0AAE8A; /* Purple */
+}
+
+.chevron[data-step="6"] {
+  background-color: #07C586; /* Teal */
+}
+
+.card-image {
+  max-width: 35%;
+  /* margin-right: 20px; */
+  font-size: 11px;
+}
+
+.card-image:nth-child(1) {
+  max-width: 17%;
+  /* margin-left: 8%;
+  margin-right: 8%; */
+}
+
+.branding {
+  display: flex;
+  justify-content: space-evenly; /* Distribute items evenly, including space between and around them */
+  align-items: center; /* Vertically center items */
+  height: 100%; /* Optional: Adjust height */
+  margin: 2%;
+
+}
+
+
+
+/* AI Program Design table */
+
+.table {
+  display: grid;
+  gap: 10px;
+  padding-right: 10%;
+  padding-left: 2%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: #F8F8F6;
+}
+
+.number {
+  flex: 0 0 80px; /* Fixed width for the number column */
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #000000;
+  background-color: inherit; /* Matches the row background */
+}
+
+.content {
+  flex: 1;
+  padding: 3px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.content h2 {
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+  /* color: white; */
+  color: #660708;
+}
+
+.content p {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  /* color: white; */
+}
+
+/* White line extending across the row */
+.row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 80px; /* Start after the number column */
+  width: 5px; /* Width of the white line */
+  background-color: white;
+  z-index: 0; /* Ensure it is behind other content */
+}
+
+
+/* Alternating Background Colors for 9 Rows */
+/* .row:nth-child(9) {
+  background-color: #ba181b; 
+}
+
+.row:nth-child(8) {
+  background-color: #a4161a; 
+}
+
+.row:nth-child(7) {
+  background-color: #850f11; 
+}
+
+.row:nth-child(6) {
+  background-color: #660708;
+}
+
+.row:nth-child(5) {
+  background-color: #3e1113;
+}
+
+.row:nth-child(4) {
+  background-color: #F8F8F6; 
+}
+
+.row:nth-child(3) {
+  background-color: #F8F8F6;
+}
+
+.row:nth-child(2) {
+  background-color: #F8F8F6;
+}
+
+.row:nth-child(1) {
+  background-color: #F8F8F6; 
+} */
+
+.icon-ai-pgrm-row {
+  width:50px; /* Set a fixed width for the icon */
+  height: 50px; /* Set a fixed height for the icon */
+  object-fit: contain; /* Ensure the icon maintains aspect ratio */
+  margin-right: 10px; /* Add spacing to the right of the icon */
+  align-self: center;
+}
+
+
+.icon-text-container {
+  display: flex; /* Align icon and text side by side */
+  align-items: flex-start; /* Align items at the top */
+  gap: 10px; /* Space between the icon and text */
+}
+
+/* Text in rows 1 to 8 should be white */
+/* .row:nth-child(-n+9) .content {
+  color: white;
+} */
+
+/* .row:nth-child(-n+9) .content h2{
+  color: #660708;
+} */
+
+/* Text in row 9 should be black */
+.row:nth-child(1) .content,  .row:nth-child(2) .content, .row:nth-child(3) .content, .row:nth-child(4) .content{
+  color: black;
+}
+
+/* Text in row 9 should be black */
+.row:nth-child(1) .number{
+  color: black;
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 768px) {
+  .table {
+    padding: 2% 4%;
+  }
+
+  .row {
+    flex-wrap: wrap; /* Allow text and icon to wrap if needed */
+    align-items: center; /* Align items properly */
+    padding: 10px;
+  }
+
+  .number {
+    flex: 0 0 50px; /* Keep number fixed */
+    font-size: 1.5rem;
+    width: auto;
+    text-align: center;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .icon-text-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .icon-ai-pgrm-row {
+    width: 40px; /* Smaller icons for mobile */
+    height: 40px;
+  }
+  /* .icon-text-container img {
+    width: 20%;
+    display: block;
+    padding-left: 5%;
+  } */
+
+  .content h2 {
+    font-size: 1rem;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-text-container img {
+    width: 30%;
+    display: block;
+    padding-left: 10%;
+  }
+
+  .table {
+    padding: 1% 2%;
+  }
+
+  .row {
+    padding: 8px;
+  }
+
+  .number {
+    font-size: 1.3rem;
+  }
+
+  .icon-ai-pgrm-row {
+    width: 35px;
+    height: 35px;
+  }
+
+  .content h2 {
+    font-size: 0.8rem;
+  }
+
+  .content p {
+    font-size: 0.6rem;
+  }
+}
+
+/* Scroll position when navigating via anchor links */
+h2 {
+  scroll-margin-top: 150px; /* Adjust this value to control spacing */
+}
+
+/* customer programs bullet list */
+.no-bullets {
+  list-style-type: none; /* Removes bullets */
+
+}
+
+/* Customer Programs Image Slider */
+
+/* Carousel container */
+.image-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image track (scrolling container) */
+.image-track {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: max-content;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Style for images */
+.carousel-image {
+  width: 120px;
+  height: auto;
+  margin: 0 15px;
+  display: block;
+}
+
+h3 {
+  color: #041241;
 }
